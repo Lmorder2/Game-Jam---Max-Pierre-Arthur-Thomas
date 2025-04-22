@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://cu2dl4vtewxwg"]
+
+[ext_resource type="Script" uid="uid://dwydfcfmjmwyn" path="res://scenes/case_1.gd" id="1_ahhtf"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ahhtf"]
+
+[node name="Control" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -90.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(1, 0.47451, 1, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 2
+
+[node name="Case1" type="TextureRect" parent="ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 36.58)
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_ahhtf")
+script = ExtResource("1_ahhtf")
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Case1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 26
+text = "Grand"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 38.0
+offset_top = 27.0
+offset_right = 84.0
+offset_bottom = 58.0
+color = Color(1, 0.117647, 1, 1)

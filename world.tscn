@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://t56lfg0dlwoy"]
+[gd_scene load_steps=6 format=3 uid="uid://b7vdjxrfb7k32"]
 
 [ext_resource type="PackedScene" uid="uid://d1yy4d83uqw5v" path="res://dungeon_room.tscn" id="1_p14dr"]
-[ext_resource type="PackedScene" uid="uid://cw52pjafwsev1" path="res://player.tscn" id="2_mpfnx"]
-[ext_resource type="Script" uid="uid://cthcryb2wsvea" path="res://camera_2d.gd" id="3_a5p5p"]
+[ext_resource type="PackedScene" uid="uid://c43gvymefayp4" path="res://player.tscn" id="2_mpfnx"]
+[ext_resource type="Script" path="res://camera_2d.gd" id="3_a5p5p"]
 [ext_resource type="PackedScene" uid="uid://b8f5j3itgoqos" path="res://dungeon_room2.tscn" id="3_aqk2v"]
+[ext_resource type="PackedScene" uid="uid://cu2dl4vtewxwg" path="res://scenes/hud.tscn" id="5_036b0"]
 
 [node name="World" type="Node2D"]
 
@@ -27,3 +28,5 @@ anchor_mode = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 script = ExtResource("3_a5p5p")
+
+[node name="Control" parent="." instance=ExtResource("5_036b0")]
