@@ -1,8 +1,22 @@
 extends TextureRect
 
 @export var canDrop = true
+@export var acceptedClass : WORD_CLASSES
+
+enum WORD_CLASSES
+{
+	WEAPONS,
+	SIZE,
+	EFFECT,
+	ARMOR
+}
+
+
+
+
 
 func _get_drag_data(position):
+
 	# Get the text from the Label node in the scene
 	var text_data = $Label.text
 
@@ -24,8 +38,11 @@ func _get_drag_data(position):
 	# Show the container as the thing that follows the mouse during the drag
 	set_drag_preview(container)
 
+	var data = {}
+	data["text"] = text_data
+	data["class"] = acceptedClass
 	# Return the text data that is being dragged
-	return text_data
+	return data
 
 
 
@@ -37,10 +54,10 @@ func _get_drag_data(position):
 	#return Case1
 	
 func _can_drop_data(_pos, data):
-	return canDrop
+	if data["class"] == acceptedClass :
+		return true
+	else:
+		return false
 	
 func _drop_data(_pos, data):
-	var CaseDrop = data
-	print("dropped " + CaseDrop)
-	var caseRealDrope = CaseDrop
-	$Label.text=CaseDrop
+	$Label.text=data["text"]
