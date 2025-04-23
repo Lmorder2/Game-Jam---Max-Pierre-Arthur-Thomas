@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" path="res://room_top_right.tscn" id="8_k3n1d"]
 [ext_resource type="PackedScene" path="res://room_top_left.tscn" id="9_2o6r5"]
 [ext_resource type="PackedScene" path="res://room_bottom.tscn" id="11_2u3nc"]
-[ext_resource type="PackedScene" path="res://room_all.tscn" id="15_2u3nc"]
+[ext_resource type="PackedScene" uid="uid://j0plhwgm7r82" path="res://room_all.tscn" id="15_2u3nc"]
 [ext_resource type="PackedScene" path="res://room_top_left_v2.tscn" id="15_hiqwa"]
 
 [node name="World" type="Node2D"]

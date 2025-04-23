@@ -2,6 +2,14 @@ extends TextureRect
 
 @export var canDrop = true
 @export var acceptedClass : WORD_CLASSES
+@export var sprite : Sprite2D
+@export var collisionPolygon : CollisionPolygon2D
+var originalSpriteSizeX
+var originalSpriteSizeY
+var originalColSizeX
+var originalColSizeY
+
+
 
 enum WORD_CLASSES
 {
@@ -11,6 +19,13 @@ enum WORD_CLASSES
 	ARMOR
 }
 
+
+func _ready() -> void:
+	if(canDrop):
+		originalSpriteSizeX = sprite.scale.x
+		originalSpriteSizeY = sprite.scale.y
+		originalColSizeX = collisionPolygon.scale.x
+		originalColSizeY = collisionPolygon.scale.y
 
 func _get_drag_data(position):
 
@@ -41,14 +56,6 @@ func _get_drag_data(position):
 	# Return the text data that is being dragged
 	return data
 
-
-
-
-
-	#var Case1 = $Label.text
-	#set_drag_preview($Label)
-	#print(Case1)
-	#return Case1
 	
 func _can_drop_data(_pos, data):
 	if data["class"] == acceptedClass :
@@ -59,3 +66,65 @@ func _can_drop_data(_pos, data):
 func _drop_data(_pos, data):
 	$Label.text=data["text"]
 	print(data["text"])
+	
+	
+	#Si le mot est petit
+	if (data["text"]) == "Petit":
+		#minus size sprite
+		sprite.scale.x = originalSpriteSizeX
+		print("SizeSpriteX : " + str(originalSpriteSizeX))
+		sprite.scale.y = originalSpriteSizeY
+		print("SizeSpriteY : " + str(originalSpriteSizeY))
+		sprite.scale.x -= 0.1
+		var newSizeSpriteX = sprite.scale.x
+		print("SizeSpriteX Après Down : " + str(newSizeSpriteX))
+		sprite.scale.y -= 0.1
+		var newSizeSpriteY = sprite.scale.y
+		print("SizeSpriteY Après Down : " + str(newSizeSpriteY))
+		print("SizeSpriteX Original après Down : " + str(originalSpriteSizeX))
+		print("SizeSpriteY Original après Down : " + str(originalSpriteSizeY))
+		
+		#minus size collision shape
+		collisionPolygon.scale.x = originalColSizeX
+		print("SizeColX : " + str(originalColSizeX))
+		collisionPolygon.scale.y = originalColSizeY
+		print("SizeColY : " + str(originalColSizeY))
+		collisionPolygon.scale.x -= 0.1
+		var newSizeColX = collisionPolygon.scale.x
+		print("SizeColX Après Down: " + str(newSizeColX))
+		collisionPolygon.scale.y -= 0.1
+		var newSizeColY = collisionPolygon.scale.y
+		print("SizeColY Après Down : " + str(newSizeColY))
+		print("SizeColX Original aprèsDown : " + str(originalColSizeX))
+		print("SizeColY Original aprèsDown : " + str(originalColSizeY))
+		
+	#for major sprite and coollision size
+	if (data["text"]) == "Grand":
+		#minus size sprite
+		sprite.scale.x = originalSpriteSizeX
+		print("SizeSpriteX : " + str(originalSpriteSizeX))
+		sprite.scale.y = originalSpriteSizeY
+		print("SizeSpriteY : " + str(originalSpriteSizeY))
+		sprite.scale.x += 0.1
+		var newSizeSpriteX = sprite.scale.x
+		print("SizeSpriteX Après Up: " + str(newSizeSpriteX))
+		sprite.scale.y += 0.1
+		var newSizeSpriteY = sprite.scale.y
+		print("SizeSpriteY Après Up : " + str(newSizeSpriteY))
+		print("SizeSpriteX Original après Up : " + str(originalSpriteSizeX))
+		print("SizeSpriteY Original après Up: " + str(originalSpriteSizeY))
+		
+		#minus size collision shape
+		collisionPolygon.scale.x = originalColSizeX
+		print("SizeColX : " + str(originalColSizeX))
+		collisionPolygon.scale.y = originalColSizeY
+		print("SizeColY : " + str(originalColSizeY))
+		collisionPolygon.scale.x -= 0.1
+		var newSizeColX = collisionPolygon.scale.x
+		print("SizeColX Après Up : " + str(newSizeColX))
+		collisionPolygon.scale.y -= 0.1
+		var newSizeColY = collisionPolygon.scale.y
+		print("SizeColY Après Up : " + str(newSizeColY))
+		print("SizeColX Original après Up : " + str(originalColSizeX))
+		print("SizeColY Original après Up : " + str(originalColSizeY))
+	
