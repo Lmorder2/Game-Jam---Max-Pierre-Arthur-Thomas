@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b6roqvdffbw0i"]
+[gd_scene load_steps=4 format=3 uid="uid://b6roqvdffbw0i"]
 
 [ext_resource type="Texture2D" path="res://shadow.png" id="1_efca1"]
 [ext_resource type="Script" uid="uid://dwydfcfmjmwyn" path="res://scenes/case_1.gd" id="2_h47q7"]
+[ext_resource type="FontFile" uid="uid://cmpqtdrta1pmt" path="res://fonts/galexica.ttf" id="3_lr3p7"]
 
 [node name="Case1" type="TextureRect"]
 custom_minimum_size = Vector2(45, 36.58)
@@ -20,10 +21,13 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.156863, 1, 1, 1)
-theme_override_font_sizes/font_size = 11
+theme_override_fonts/font = ExtResource("3_lr3p7")
+theme_override_font_sizes/font_size = 14
 text = "Lorem Ipsum"
 horizontal_alignment = 1
 vertical_alignment = 1
