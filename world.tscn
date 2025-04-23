@@ -48,6 +48,9 @@ position = Vector2(0, -360)
 [node name="room_bottom" parent="." instance=ExtResource("11_2u3nc")]
 position = Vector2(320, -360)
 
+[node name="room_top_left_v2" parent="." instance=ExtResource("15_hiqwa")]
+position = Vector2(320, -180)
+
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 position_smoothing_enabled = true
@@ -60,6 +63,3 @@ script = ExtResource("3_a5p5p")
 
 [node name="Node2D" parent="." instance=ExtResource("7_pkg7o")]
 position = Vector2(225, 99)
-
-[node name="DungeonRoom" parent="." instance=ExtResource("15_hiqwa")]
-position = Vector2(320, -180)
