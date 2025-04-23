@@ -44,15 +44,13 @@ texture = SubResource("CanvasTexture_hqtel")
 offset = Vector2(4.02, 0)
 
 [node name="Sword" type="Sprite2D" parent="weapons"]
-visible = false
 scale = Vector2(10.5, 1.8761)
 texture = SubResource("PlaceholderTexture2D_i3pqv")
 offset = Vector2(0.45, 0)
 
-[node name="SwordItBox" type="CollisionPolygon2D" parent="weapons"]
-visible = false
+[node name="SwordAttack" type="CollisionPolygon2D" parent="weapons"]
 position = Vector2(0, 7)
 polygon = PackedVector2Array(4, -14, 12, -16, 12, 2, 4, 0)
 
-[node name="BowItBox" type="CollisionPolygon2D" parent="weapons"]
+[node name="BowAttack" type="CollisionPolygon2D" parent="weapons"]
 polygon = PackedVector2Array(0, 0, 44, -2, 44, 2)
