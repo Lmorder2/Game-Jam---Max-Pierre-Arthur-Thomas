@@ -28,11 +28,12 @@ canDrop = true
 acceptedClass = 1
 
 [node name="Label" parent="HBoxContainer/Case1" index="0"]
-offset_left = 3.0
-offset_top = 7.0
-offset_right = 30.0
-offset_bottom = 3.0
+offset_left = 2.0
+offset_top = 6.0
+offset_right = 32.0
+offset_bottom = 8.0
 scale = Vector2(0.32821, 0.35804)
+theme_override_font_sizes/font_size = 20
 text = ""
 
 [node name="Case2" parent="HBoxContainer" instance=ExtResource("2_84gdq")]
@@ -42,11 +43,12 @@ texture = ExtResource("4_kaap1")
 canDrop = true
 
 [node name="Label" parent="HBoxContainer/Case2" index="0"]
-offset_left = 3.0
-offset_top = 7.0
-offset_right = 30.0
-offset_bottom = 3.0
+offset_left = 2.0
+offset_top = 6.0
+offset_right = 32.0
+offset_bottom = 8.0
 scale = Vector2(0.32821, 0.35804)
+theme_override_font_sizes/font_size = 20
 text = ""
 
 [node name="Case3" parent="HBoxContainer" instance=ExtResource("2_84gdq")]
@@ -57,11 +59,12 @@ canDrop = true
 acceptedClass = 2
 
 [node name="Label" parent="HBoxContainer/Case3" index="0"]
-offset_left = 3.0
-offset_top = 7.0
-offset_right = 30.0
-offset_bottom = 3.0
+offset_left = 2.0
+offset_top = 6.0
+offset_right = 32.0
+offset_bottom = 8.0
 scale = Vector2(0.32821, 0.35804)
+theme_override_font_sizes/font_size = 20
 text = ""
 
 [node name="Case4" parent="HBoxContainer" instance=ExtResource("2_84gdq")]
@@ -72,11 +75,12 @@ canDrop = true
 acceptedClass = 3
 
 [node name="Label" parent="HBoxContainer/Case4" index="0"]
-offset_left = 3.0
-offset_top = 7.0
-offset_right = 30.0
-offset_bottom = 3.0
+offset_left = 2.0
+offset_top = 6.0
+offset_right = 32.0
+offset_bottom = 8.0
 scale = Vector2(0.32821, 0.35804)
+theme_override_font_sizes/font_size = 20
 text = ""
 
 [editable path="HBoxContainer/Case1"]
