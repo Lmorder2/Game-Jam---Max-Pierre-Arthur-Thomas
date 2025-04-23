@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=3 uid="uid://cctt4r0c6ovvb"]
+
+[ext_resource type="Texture2D" uid="uid://1cu34c517h2s" path="res://icon.svg" id="1_dy6sc"]
+[ext_resource type="Script" uid="uid://pppfh7kbpexg" path="res://mob.gd" id="1_nokgg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nokgg"]
+size = Vector2(28, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nokgg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dy6sc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ubaqv"]
+size = Vector2(177, 157)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p11y5"]
+size = Vector2(24, 26)
+
+[node name="mob" type="CharacterBody2D"]
+collision_layer = 2
+slide_on_ceiling = false
+floor_stop_on_slope = false
+safe_margin = 0.8
+script = ExtResource("1_nokgg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_nokgg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.226562, 0.210938)
+sprite_frames = SubResource("SpriteFrames_nokgg")
+
+[node name="detection_area" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection_area"]
+shape = SubResource("RectangleShape2D_ubaqv")
+
+[node name="kill_area" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="kill_area"]
+shape = SubResource("RectangleShape2D_p11y5")
+
+[connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
+[connection signal="body_entered" from="kill_area" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="kill_area" to="." method="_on_kill_area_body_entered"]
