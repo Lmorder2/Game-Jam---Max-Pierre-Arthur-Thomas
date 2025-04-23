@@ -12,9 +12,6 @@ enum WORD_CLASSES
 }
 
 
-
-
-
 func _get_drag_data(position):
 
 	# Get the text from the Label node in the scene
@@ -61,3 +58,4 @@ func _can_drop_data(_pos, data):
 	
 func _drop_data(_pos, data):
 	$Label.text=data["text"]
+	print(data["text"])

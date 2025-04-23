@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b6roqvdffbw0i"]
 
-[ext_resource type="Texture2D" uid="uid://qwf0dy8to022" path="res://shadow.png" id="1_efca1"]
+[ext_resource type="Texture2D" path="res://shadow.png" id="1_efca1"]
 [ext_resource type="Script" uid="uid://dwydfcfmjmwyn" path="res://scenes/case_1.gd" id="2_h47q7"]
 
 [node name="Case1" type="TextureRect"]

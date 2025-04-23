@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://q6rcrapxhysk" path="res://player.gd" id="1_1umnt"]
 [ext_resource type="Texture2D" uid="uid://bp5nnhm1gc2bt" path="res://wizard.png" id="1_574kh"]
-[ext_resource type="Texture2D" uid="uid://qwf0dy8to022" path="res://shadow.png" id="2_j2y24"]
+[ext_resource type="Texture2D" path="res://shadow.png" id="2_j2y24"]
 [ext_resource type="PackedScene" uid="uid://631u8nj6fu44" path="res://scenes/BoxMots.tscn" id="4_hqtel"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nenqg"]
@@ -84,15 +84,8 @@ texture = ExtResource("2_j2y24")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(0, 2, -4, -4, 0, -10, 4, -4)
 
-[node name="BoxMotsPlayer" parent="." instance=ExtResource("4_hqtel")]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -59.0
-offset_top = -75.0
-offset_right = 106.0
-offset_bottom = -37.0
-grow_horizontal = 2
-grow_vertical = 0
+[node name="BoxMots" parent="." instance=ExtResource("4_hqtel")]
+offset_left = -51.0
+offset_top = -44.0
+offset_right = 49.0
+offset_bottom = -24.0
