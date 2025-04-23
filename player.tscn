@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://q6rcrapxhysk" path="res://player.gd" id="1_1umnt"]
 [ext_resource type="Texture2D" uid="uid://1cu34c517h2s" path="res://icon.svg" id="2_hqtel"]
 [ext_resource type="PackedScene" uid="uid://631u8nj6fu44" path="res://scenes/BoxMots.tscn" id="4_hqtel"]
-[ext_resource type="Script" path="res://sword.gd" id="4_sweqy"]
+[ext_resource type="Script" uid="uid://dmy17ikqxc8qf" path="res://sword.gd" id="4_sweqy"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_i3pqv"]
 
