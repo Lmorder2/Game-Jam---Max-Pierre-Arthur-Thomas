@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwd5s8o6mowxi"]
+
+[ext_resource type="Script" uid="uid://ch578lxvaxe8m" path="res://weapons.gd" id="1_y178t"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_hqtel"]
+
+[node name="weaponsBow" type="Area2D"]
+script = ExtResource("1_y178t")
+
+[node name="Bow" type="Sprite2D" parent="."]
+show_behind_parent = true
+scale = Vector2(1, 12.25)
+texture = SubResource("CanvasTexture_hqtel")
+offset = Vector2(4.02, 0)
+
+[node name="BowAttack" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, 0, 44, -2, 44, 2)
