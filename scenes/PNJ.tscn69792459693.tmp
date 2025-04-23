@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://ceo1sbdume12"]
+
+[ext_resource type="Script" uid="uid://wn5ejsj7sdqx" path="res://scenes/pnj.gd" id="1_qhfrh"]
+[ext_resource type="Texture2D" uid="uid://bp5nnhm1gc2bt" path="res://wizard.png" id="2_7qmcp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhfrh"]
+atlas = ExtResource("2_7qmcp")
+region = Rect2(0, 0, 28, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7qmcp"]
+atlas = ExtResource("2_7qmcp")
+region = Rect2(84, 0, 28, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ibej5"]
+atlas = ExtResource("2_7qmcp")
+region = Rect2(168, 0, 28, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w31br"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhfrh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7qmcp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ibej5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[node name="RigidBody2D" type="RigidBody2D"]
+script = ExtResource("1_qhfrh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_w31br")
+autoplay = "default"
+frame_progress = 0.983453
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
