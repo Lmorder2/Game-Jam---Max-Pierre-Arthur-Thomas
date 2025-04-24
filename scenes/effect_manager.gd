@@ -87,7 +87,7 @@ func apply_effect(effect : String, case) -> void:
 	if (effect) == "Poison":
 		reset_effect()
 		for i in range(5):
-			$PoisonTimer.wait_time = 0.5
+			$PoisonTimer.wait_time = 1
 			healthManager.amount = 10
 			healthManager.take_damage(healthManager.amount)
 			$PoisonTimer.start()
@@ -98,5 +98,5 @@ func apply_effect(effect : String, case) -> void:
 			
 		
 		
-	if (effect) == "Ralentit":
-		print("Ralentit Effect")
+	if (effect) == "Immobile":
+		print("Immobile Effect")
