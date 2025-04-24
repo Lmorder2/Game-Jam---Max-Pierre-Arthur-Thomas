@@ -311,7 +311,7 @@ size = Vector2(24, 26)
 
 [node name="mob" type="CharacterBody2D"]
 position = Vector2(67, 98)
-collision_layer = 2
+collision_layer = 4
 slide_on_ceiling = false
 floor_stop_on_slope = false
 safe_margin = 0.8
@@ -352,6 +352,7 @@ offset_right = 50.0
 offset_bottom = -17.0
 
 [node name="WeaponsSword" parent="." instance=ExtResource("3_ubaqv")]
+collision_mask = 1
 
 [node name="WeaponsBow" parent="." instance=ExtResource("5_gfurk")]
 
