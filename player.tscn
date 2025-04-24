@@ -48,7 +48,6 @@ alignment = 1
 is_player = true
 
 [node name="weaponsSword" parent="." instance=ExtResource("5_2hs0m")]
-collision_mask = 1
 is_player = true
 
 [node name="EffectManager" parent="." node_paths=PackedStringArray("sprite", "collisionPolygon", "sword", "bow", "healthManager") instance=ExtResource("7_1jxqw")]
