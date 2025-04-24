@@ -10,11 +10,12 @@ func _process(delta: float) -> void:
 	if(Input.is_action_just_pressed("kill_mobs")):
 		emit_signal("death", self)
 		queue_free()
+	
 
 func _physics_process(delta: float) -> void:
 	if player_chase:
-		position += (player.position - position)/speed
-		if (player.position.x - position.x) < 0:
+		global_position += (player.global_position - global_position)/speed
+		if (player.global_position.x - global_position.x) < 0:
 			$AnimatedSprite2D.flip_h = true
 		move_and_collide(Vector2(0,0))	
 
