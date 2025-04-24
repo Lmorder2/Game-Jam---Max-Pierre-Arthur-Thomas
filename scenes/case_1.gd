@@ -72,6 +72,11 @@ func _drop_data(_pos, data):
 		$Label.text=data["text"]
 		print(data["text"])
 		effect_manager.apply_effect(data["text"], get_node(get_path()))
+		effect_manager.apply_effect(data["text"], get_node(get_path()))
+		effect_manager.apply_effect(data["text"], get_node(get_path()))
+		effect_manager.apply_effect(data["text"], get_node(get_path()))
+		effect_manager.apply_effect(data["text"], get_node(get_path()))
+		effect_manager.apply_effect(data["text"], get_node(get_path()))
 
 	else:
 		#reset de la taille
