@@ -19,6 +19,9 @@ func _process(delta):
 		if Input.is_action_just_pressed("Attack"):
 			activate_sword_attack()
 		look_at(get_global_mouse_position())
+
+func look_at_target(target):
+	look_at(target)
 	
 func activate_sword_attack():
 	monitoring = true
