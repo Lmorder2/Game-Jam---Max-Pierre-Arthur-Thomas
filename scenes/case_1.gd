@@ -3,14 +3,27 @@ extends TextureRect
 @export var canDrop = true
 @export var acceptedClass : WORD_CLASSES
 
+@onready var effect_manager : EffectManager
+
 enum WORD_CLASSES
 {
 	WEAPONS,
 	SIZE,
 	EFFECT,
-	ARMOR
+	ARMOR,
+	RESET
 }
 
+func reset_armor():
+	pass
+	
+	
+func reset_effect():
+	pass
+
+func _ready():
+	if(canDrop):
+		effect_manager = $"../..".effect_manager
 
 func _get_drag_data(position):
 
@@ -41,21 +54,27 @@ func _get_drag_data(position):
 	# Return the text data that is being dragged
 	return data
 
-
-
-
-
-	#var Case1 = $Label.text
-	#set_drag_preview($Label)
-	#print(Case1)
-	#return Case1
 	
 func _can_drop_data(_pos, data):
-	if data["class"] == acceptedClass :
+
+	if data["class"] == acceptedClass or data["class"] == WORD_CLASSES.RESET :
 		return true
 	else:
 		return false
 	
 func _drop_data(_pos, data):
-	$Label.text=data["text"]
-	print(data["text"])
+	if data["text"] != "Reset":
+		$Label.text=data["text"]
+		print(data["text"])
+		effect_manager.apply_effect(data["text"])
+	else:
+		#reset de la taille
+		if $Label.text == "Petit" or $Label.text == "Grand":
+			effect_manager.reset_size_word()
+			$Label.text = "Normal"
+			
+		#reset des armes (épée de base)
+		elif $Label.text == "Epée" or $Label.text == "Arc":
+			effect_manager.reset_weapon()
+			$Label.text = "Epée"
+		
