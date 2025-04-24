@@ -34,7 +34,6 @@ func take_damage(amount):
 	healthCalc -= amount
 	if healthCalc <= 0:
 		healthActual = 0
-		print("DEAAAD")
 		amount = 0
 	elif healthCalc >= healthMax :
 		healthActual = healthMax

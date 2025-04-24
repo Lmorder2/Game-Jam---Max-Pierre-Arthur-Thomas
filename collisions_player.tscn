@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://vquj42g8pf15"]
+
+[ext_resource type="Script" uid="uid://bemu87qllg8o7" path="res://collisions_player.gd" id="1_atifl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0cy1m"]
+size = Vector2(48, 26)
+
+[node name="COLLISIONS_PLAYER" type="Node2D" node_paths=PackedStringArray("mobs")]
+script = ExtResource("1_atifl")
+mobs = [NodePath("")]
+
+[node name="LEFT_BODY" type="StaticBody2D" parent="."]
+
+[node name="LEFT_SHAPE" type="CollisionShape2D" parent="LEFT_BODY"]
+position = Vector2(24, 90)
+shape = SubResource("RectangleShape2D_0cy1m")
+
+[node name="UP_BODY" type="StaticBody2D" parent="."]
+
+[node name="UP_SHAPE" type="CollisionShape2D" parent="UP_BODY"]
+position = Vector2(160, 10)
+rotation = -1.57079
+shape = SubResource("RectangleShape2D_0cy1m")
+
+[node name="RIGHT_BODY" type="StaticBody2D" parent="."]
+
+[node name="RIGHT_SHAPE" type="CollisionShape2D" parent="RIGHT_BODY"]
+position = Vector2(296, 90)
+shape = SubResource("RectangleShape2D_0cy1m")
+
+[node name="DOWN_BODY" type="StaticBody2D" parent="."]
+
+[node name="DOWN_SHAPE" type="CollisionShape2D" parent="DOWN_BODY"]
+position = Vector2(159, 170)
+rotation = 1.57079
+shape = SubResource("RectangleShape2D_0cy1m")
