@@ -25,4 +25,3 @@ func _on_detection_area_body_exited(body: Node2D) -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if(body.name=="Player"):
 		print("you are dead") # Replace with function body.
-		queue_free()
