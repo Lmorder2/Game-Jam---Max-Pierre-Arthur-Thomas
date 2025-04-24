@@ -1,0 +1,97 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmkx324t2yt15"]
+
+[ext_resource type="FontFile" uid="uid://cmpqtdrta1pmt" path="res://fonts/galexica.ttf" id="1_4g066"]
+
+[sub_resource type="GDScript" id="GDScript_4g066"]
+script/source = "extends TextureRect
+
+@export var canDrop = true
+@export var acceptedClass : WORD_CLASSES
+#@export var sprite : Sprite2D
+#@export var collisionPolygon : CollisionPolygon2D
+#@export var sword : Node2D
+#@export var bow : Node2D
+
+var originalSpriteSizeX
+var originalSpriteSizeY
+var originalColSizeX
+var originalColSizeY
+var originalStateSword
+var originalStateBow
+
+
+enum WORD_CLASSES
+{
+	WEAPONS,
+	SIZE,
+	EFFECT,
+	ARMOR,
+	RESET
+}
+
+func _get_drag_data(position):
+	
+	# Get the text from the Label node in the scene
+	var text_data = $Label2.text
+
+	# Create a new Label that will be shown while dragging
+	var label = Label.new()
+	label.text = text_data  # Set the text inside the new label
+	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER  # Center the text horizontally
+	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER  # Center the text vertically
+	label.size_flags_horizontal = Control.SIZE_SHRINK_CENTER  # Allow the label to shrink and center horizontally
+	label.size_flags_vertical = Control.SIZE_SHRINK_CENTER  # Allow the label to shrink and center vertically
+	
+	var data = {}
+	data[\"text\"] = text_data
+	data[\"class\"] = acceptedClass
+	# Return the text data that is being dragged
+	return data
+	
+	
+	
+	
+	
+func _can_drop_data(_pos, data):
+	if data[\"class\"] != acceptedClass :
+		return true
+	else:
+		return true
+	
+	
+	
+	
+func _drop_data(_pos, data):
+	if data[\"class\"] == \"WEAPONS\":
+		pass
+	
+	if data[\"class\"] == \"SIZE\":
+		pass
+		
+	if data[\"class\"] == \"EFFECT\":
+		pass
+		
+	if data[\"class\"] == \"ARMOR\":
+		pass
+"
+
+[node name="ResetDragDrop" type="TextureRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = SubResource("GDScript_4g066")
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.156863, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_4g066")
+theme_override_font_sizes/font_size = 14
+text = "Reset"
+horizontal_alignment = 1
+vertical_alignment = 1

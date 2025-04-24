@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://ceo1sbdume12"]
+[gd_scene load_steps=19 format=3 uid="uid://ceo1sbdume12"]
 
 [ext_resource type="Script" uid="uid://wn5ejsj7sdqx" path="res://scenes/pnj.gd" id="1_qhfrh"]
 [ext_resource type="Texture2D" uid="uid://bp5nnhm1gc2bt" path="res://wizard.png" id="2_7qmcp"]
+[ext_resource type="PackedScene" uid="uid://631u8nj6fu44" path="res://scenes/BoxMots.tscn" id="3_7qmcp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8dth4"]
 atlas = ExtResource("2_7qmcp")
@@ -117,5 +118,8 @@ shape = SubResource("RectangleShape2D_8dth4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_qhfrh")
+
+[node name="BoxMots" parent="." node_paths=PackedStringArray("effect_manager") instance=ExtResource("3_7qmcp")]
+effect_manager = NodePath("")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

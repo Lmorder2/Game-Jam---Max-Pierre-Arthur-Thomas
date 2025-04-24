@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpqkg4irwsyy2"]
+
+[ext_resource type="Texture2D" uid="uid://j5kwuv14rae8" path="res://poison_particle.png" id="1_oaf0w"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="EffectPoison" type="CPUParticles2D" parent="."]
+amount = 5
+texture = ExtResource("1_oaf0w")
+emission_shape = 1
+emission_sphere_radius = 5.17
+gravity = Vector2(0, -15)
+
+[node name="EffectRalenti" type="CPUParticles2D" parent="."]
+visible = false
+amount = 5
+emission_shape = 1
+emission_sphere_radius = 5.17
+gravity = Vector2(0, -15)
