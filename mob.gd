@@ -4,7 +4,12 @@ var speed = 40
 var player_chase = false
 var player = null
 	
+signal death(mob: Node)
 
+func _process(delta: float) -> void:
+	if(Input.is_action_just_pressed("kill_mobs")):
+		emit_signal("death", self)
+		queue_free()
 
 func _physics_process(delta: float) -> void:
 	
@@ -30,3 +35,7 @@ func _on_detection_area_body_exited(body: Node2D) -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if(body.name=="Player"):
 		print("you are dead") # Replace with function body.
+
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	pass # Replace with function body.

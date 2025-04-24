@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bueuvbtg4e5fw"]
+[gd_scene load_steps=8 format=3 uid="uid://bueuvbtg4e5fw"]
 
 [ext_resource type="Script" uid="uid://3d34kkpadtkr" path="res://room_all.gd" id="1_h5vbu"]
 [ext_resource type="Texture2D" uid="uid://bkx2epnt5ymb7" path="res://dungeon_rooms/basic_dungeon_room.png" id="2_qius0"]
 [ext_resource type="Texture2D" uid="uid://in2k08jsy2n4" path="res://dungeon_rooms/bottom_right.png" id="2_wfbb5"]
 [ext_resource type="PackedScene" uid="uid://cqfaktsu0eir" path="res://door.tscn" id="3_xiv2w"]
+[ext_resource type="PackedScene" uid="uid://vquj42g8pf15" path="res://collisions_player.tscn" id="5_o7y3s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ecl6m"]
 size = Vector2(224, 112)
@@ -68,6 +69,9 @@ position = Vector2(0, 70)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorDown"]
 shape = SubResource("RectangleShape2D_6yqxi")
+
+[node name="COLLISIONS_PLAYER" parent="." node_paths=PackedStringArray("mobs") instance=ExtResource("5_o7y3s")]
+mobs = [NodePath("")]
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
 
