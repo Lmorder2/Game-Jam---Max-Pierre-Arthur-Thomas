@@ -1,21 +1,20 @@
-[gd_scene load_steps=17 format=3 uid="uid://b7vdjxrfb7k32"]
+[gd_scene load_steps=16 format=3 uid="uid://b7vdjxrfb7k32"]
 
 [ext_resource type="PackedScene" uid="uid://pi3pfcnlg4u2" path="res://room_top.tscn" id="2_gbfbk"]
 [ext_resource type="PackedScene" uid="uid://c43gvymefayp4" path="res://player.tscn" id="2_mpfnx"]
-[ext_resource type="Script" uid="uid://cthcryb2wsvea" path="res://camera_2d.gd" id="3_a5p5p"]
+[ext_resource type="Script" path="res://camera_2d.gd" id="3_a5p5p"]
 [ext_resource type="PackedScene" uid="uid://cu2dl4vtewxwg" path="res://scenes/hud.tscn" id="5_036b0"]
 [ext_resource type="PackedScene" uid="uid://ca7p560dd1f2t" path="res://room_right.tscn" id="5_ioo17"]
 [ext_resource type="PackedScene" uid="uid://br0nltp5jg1an" path="res://room_left.tscn" id="5_wse8f"]
-[ext_resource type="PackedScene" path="res://scenes/dialog_box.tscn" id="6_dwbse"]
+[ext_resource type="PackedScene" uid="uid://gkae27xrcy3k" path="res://scenes/dialog_box.tscn" id="6_dwbse"]
 [ext_resource type="PackedScene" uid="uid://b8wye6esescu0" path="res://room_bottom_right_left.tscn" id="6_wse8f"]
 [ext_resource type="PackedScene" uid="uid://bueuvbtg4e5fw" path="res://room_bottom_right.tscn" id="7_ic0uy"]
-[ext_resource type="PackedScene" uid="uid://ceo1sbdume12" path="res://scenes/PNJ.tscn" id="7_pkg7o"]
 [ext_resource type="PackedScene" uid="uid://38yxb0qkr1gi" path="res://room_top_right.tscn" id="8_k3n1d"]
 [ext_resource type="PackedScene" uid="uid://bvn1f5odxxjk7" path="res://room_top_left.tscn" id="9_2o6r5"]
 [ext_resource type="PackedScene" uid="uid://brjokpyapc4ly" path="res://room_bottom.tscn" id="11_2u3nc"]
 [ext_resource type="PackedScene" uid="uid://d1yy4d83uqw5v" path="res://room_all.tscn" id="15_2u3nc"]
 [ext_resource type="PackedScene" uid="uid://comh65adnc5k1" path="res://room_top_left_v2.tscn" id="15_hiqwa"]
-[ext_resource type="PackedScene" uid="uid://08is53654krc" path="res://mob.tscn" id="16_2u3nc"]
+[ext_resource type="PackedScene" path="res://mob.tscn" id="16_2u3nc"]
 
 [node name="World" type="Node2D"]
 
@@ -57,9 +56,6 @@ script = ExtResource("3_a5p5p")
 
 [node name="CanvasLayer" parent="." instance=ExtResource("6_dwbse")]
 visible = false
-
-[node name="Node2D" parent="." instance=ExtResource("7_pkg7o")]
-position = Vector2(225, 99)
 
 [node name="DungeonRoom" parent="." instance=ExtResource("15_hiqwa")]
 position = Vector2(320, -180)

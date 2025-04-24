@@ -14,12 +14,7 @@ enum WORD_CLASSES
 	RESET
 }
 
-func reset_armor():
-	pass
-	
-	
-func reset_effect():
-	pass
+
 
 func _ready():
 	if(canDrop):
@@ -69,12 +64,21 @@ func _drop_data(_pos, data):
 		effect_manager.apply_effect(data["text"])
 	else:
 		#reset de la taille
-		if $Label.text == "Petit" or $Label.text == "Grand":
+		if acceptedClass == WORD_CLASSES.SIZE:
 			effect_manager.reset_size_word()
 			$Label.text = "Normal"
 			
 		#reset des armes (épée de base)
-		elif $Label.text == "Epée" or $Label.text == "Arc":
+		elif acceptedClass == WORD_CLASSES.WEAPONS:
 			effect_manager.reset_weapon()
 			$Label.text = "Epée"
+			
+		elif acceptedClass == WORD_CLASSES.EFFECT:
+			effect_manager.reset_effect()
+			$Label.text = "Aucun"
+			
+		elif acceptedClass == WORD_CLASSES.ARMOR:
+			effect_manager.reset_armor()
+			$Label.text = "Aucune"
+		
 		

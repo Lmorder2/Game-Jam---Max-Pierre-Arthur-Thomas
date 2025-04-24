@@ -47,6 +47,13 @@ func reset_weapon():
 	bow.hide()
 	sword.show()
 	
+func reset_armor():
+	pass
+	
+	
+func reset_effect():
+	pass
+	
 func apply_effect(effect : String) -> void:
 	#Si le mot est petit
 	if (effect) == "Petit":
@@ -71,6 +78,7 @@ func apply_effect(effect : String) -> void:
 		bow.set_process(false)
 		sword.set_process(true)
 		bow.hide()
+		sword.show()
 		print("switch to SWORD; Etat de sword " + str(sword.is_processing()) + " Etat de Bow " + str(bow.is_processing()))
 		
 		
@@ -78,5 +86,6 @@ func apply_effect(effect : String) -> void:
 		bow.set_process(true)
 		sword.set_process(false)
 		sword.hide()
+		bow.show()
 		print("switch to BOW; Etat de bow " + str(bow.is_processing()) + " Etat de Sword " + str(sword.is_processing()))
 		
