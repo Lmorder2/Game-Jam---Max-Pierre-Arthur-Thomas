@@ -1,0 +1,72 @@
+[gd_scene load_steps=9 format=3 uid="uid://p6sftspc5d67"]
+
+[ext_resource type="Script" uid="uid://3d34kkpadtkr" path="res://room_all.gd" id="1_avka1"]
+[ext_resource type="Texture2D" uid="uid://dnon74iy080fq" path="res://dungeon_rooms/bottom.png" id="2_p0ly0"]
+[ext_resource type="Texture2D" uid="uid://bkx2epnt5ymb7" path="res://dungeon_rooms/basic_dungeon_room.png" id="3_x5hb5"]
+[ext_resource type="PackedScene" uid="uid://cqfaktsu0eir" path="res://door.tscn" id="4_lmeir"]
+[ext_resource type="PackedScene" uid="uid://6rh6s5bknul" path="res://golem_boss.tscn" id="5_p0ly0"]
+[ext_resource type="PackedScene" uid="uid://c43gvymefayp4" path="res://player.tscn" id="6_x5hb5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ecl6m"]
+size = Vector2(224, 112)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6yqxi"]
+size = Vector2(16, 16)
+
+[node name="DungeonRoom" type="Node2D"]
+z_index = -1
+script = ExtResource("1_avka1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 2)
+texture = ExtResource("2_p0ly0")
+centered = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, 182)
+texture = ExtResource("3_x5hb5")
+centered = false
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
+polygon = PackedVector2Array(170, 34, 170, 0, 320, 0, 320, 80, 272, 80, 272, 34)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Walls"]
+polygon = PackedVector2Array(0, 0, 170, 0, 170, 34, 48, 34, 48, 100, 0, 100)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Walls"]
+polygon = PackedVector2Array(0, 100, 48, 100, 48, 146, 150, 146, 150, 180, 0, 180)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Walls"]
+polygon = PackedVector2Array(170, 146, 272, 146, 272, 81, 320, 80, 320, 180, 170, 180)
+
+[node name="PlayerDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector"]
+position = Vector2(160, 90)
+shape = SubResource("RectangleShape2D_ecl6m")
+debug_color = Color(0.984314, 0, 0.329412, 0.419608)
+
+[node name="DoorDown" parent="." instance=ExtResource("4_lmeir")]
+position = Vector2(160, 154)
+metadata/_edit_group_ = true
+
+[node name="Marker2D" parent="DoorDown" index="0"]
+position = Vector2(0, 70)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorDown"]
+shape = SubResource("RectangleShape2D_6yqxi")
+
+[node name="GolemBoss" parent="." instance=ExtResource("5_p0ly0")]
+position = Vector2(78, 66)
+
+[node name="Player" parent="." instance=ExtResource("6_x5hb5")]
+position = Vector2(249, 67)
+
+[connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
+
+[editable path="DoorDown"]
