@@ -7,7 +7,7 @@ size = Vector2(48, 26)
 
 [node name="COLLISIONS_PLAYER" type="Node2D" node_paths=PackedStringArray("mobs")]
 script = ExtResource("1_atifl")
-mobs = [NodePath("")]
+mobs = [null]
 
 [node name="LEFT_BODY" type="StaticBody2D" parent="."]
 
