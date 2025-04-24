@@ -17,10 +17,10 @@ func _ready() -> void:
 func life_reset():
 	healthMax = originalHealthMax
 	lifeBar.set_max(healthMax)
-	healthActual.set(healthMax)
+	healthActual.set_value(healthMax)
 	
 func life_update():
-	lifeBar.set(healthActual)
+	lifeBar.set_value(healthActual)
 	
 func life_max_update():
 	lifeBar.set_max(healthMax)
@@ -28,15 +28,6 @@ func life_max_update():
 func _process(delta):
 	lifeBar.set_max(healthMax)
 	lifeBar.set_value(healthActual)
-	if Input.is_action_just_pressed("Damage test +"):
-		amount += 1
-		take_damage(amount)
-		amount = 0
-	
-	elif Input.is_action_just_pressed("Damage test -"):
-		amount -=1
-		take_damage(amount)
-		amount = 0
 		
 
 func take_damage(amount):
@@ -45,9 +36,15 @@ func take_damage(amount):
 	if healthCalc <= 0:
 		healthActual = 0
 		print("DEAAAD")
+		amount = 0
 	elif healthCalc >=100:
 		healthActual = 100
+		print("full vie max")
+		amount = 0
 	else:
 		healthActual -= amount
+		life_update()
+		print("damage pris")
+		amount = 0
 		
 	

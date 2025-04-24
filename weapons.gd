@@ -3,6 +3,8 @@ extends Area2D
 @export var hitbox : CollisionPolygon2D
 var attack_duration = 0.2  # Durée d'activation de la hitbox
 
+@export var is_player = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	hitbox.disabled = true
@@ -13,9 +15,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_pressed("Attack"):
-		activate_sword_attack()
-	look_at(get_global_mouse_position())
+	if is_player:
+		if Input.is_action_just_pressed("Attack"):
+			activate_sword_attack()
+		look_at(get_global_mouse_position())
 	
 func activate_sword_attack():
 	hitbox.disabled = false
