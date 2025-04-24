@@ -21,6 +21,7 @@ offset = Vector2(4.02, 0)
 polygon = PackedVector2Array(0, 0, 44, -2, 44, 2)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(21.75, 0)
 scale = Vector2(44.5, 4)
 texture = SubResource("PlaceholderTexture2D_y178t")
