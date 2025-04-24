@@ -21,3 +21,6 @@ func _physics_process(delta: float) -> void:
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	pass # Replace with function body.
+
+func attack(body):
+	body.get_node("HealthManager").take_damage(20)

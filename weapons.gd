@@ -7,7 +7,7 @@ var attack_duration = 0.2  # Durée d'activation de la hitbox
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	hitbox.disabled = true
+	monitoring = false
 	
 	$Sprite2D.visible = false  # Si c'est une CollisionShape2D ou Area2D
 	# sinon, utilise sword_attack.visible = false
@@ -21,9 +21,13 @@ func _process(delta):
 		look_at(get_global_mouse_position())
 	
 func activate_sword_attack():
-	hitbox.disabled = false
+	monitoring = true
 	$Sprite2D.visible = true
 	await get_tree().create_timer(attack_duration).timeout
-	hitbox.disabled = true
-	$Sprite2D.visible = false
 	
+	monitoring = false
+	$Sprite2D.visible = false
+
+func _on_body_entered(body: Node2D) -> void:
+	if(get_parent().has_method("attack")):
+		get_parent().attack(body)
