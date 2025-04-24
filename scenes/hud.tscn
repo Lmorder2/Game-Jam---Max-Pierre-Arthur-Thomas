@@ -14,9 +14,9 @@
 [node name="Control" type="CanvasLayer"]
 
 [node name="TextureRect2" type="TextureRect" parent="."]
-offset_left = 337.0
+offset_left = 301.0
 offset_top = -219.0
-offset_right = 570.0
+offset_right = 534.0
 offset_bottom = 504.0
 texture = ExtResource("1_mphia")
 
@@ -27,13 +27,13 @@ anchor_left = 1.24
 anchor_top = 0.5
 anchor_right = 1.24
 anchor_bottom = 0.5
-offset_left = -186.28
-offset_top = -86.5
-offset_right = -84.2801
-offset_bottom = 115.5
+offset_left = -211.28
+offset_top = -86.0
+offset_right = -109.28
+offset_bottom = 116.0
 grow_horizontal = 0
 grow_vertical = 2
-scale = Vector2(0.96, 0.96)
+scale = Vector2(0.855, 0.855)
 texture = ExtResource("1_0i1j5")
 stretch_mode = 3
 
@@ -123,7 +123,7 @@ acceptedClass = 2
 offset_top = 0.0
 offset_bottom = 0.0
 theme_override_colors/font_color = Color(0.156863, 1, 1, 0)
-text = "Slow"
+text = "Immobile"
 
 [node name="Case7" parent="TextureRect/GridContainer" instance=ExtResource("1_5ysmq")]
 custom_minimum_size = Vector2(45, 37)
