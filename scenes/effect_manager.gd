@@ -7,19 +7,15 @@ class_name EffectManager
 @export var sword : Node2D
 @export var bow : Node2D
 
-var originalSpriteSizeX
-var originalSpriteSizeY
-var originalColSizeX
-var originalColSizeY
+var originalSpriteSize
+var originalColSize
 var originalStateSword
 var originalStateBow
 
 
 func _ready() -> void:
-	originalSpriteSizeX = sprite.scale.x
-	originalSpriteSizeY = sprite.scale.y
-	originalColSizeX = collisionPolygon.scale.x
-	originalColSizeY = collisionPolygon.scale.y
+	originalSpriteSize = Vector2(sprite.scale)
+	originalColSize = Vector2(collisionPolygon.scale)
 	sword.set_process(true)
 	sword.show()
 	print("état de sword set process"+str(sword.is_processing()))
@@ -36,10 +32,8 @@ func _process(delta: float) -> void:
 
 
 func reset_size_word():
-	collisionPolygon.scale.x = originalColSizeX
-	collisionPolygon.scale.y = originalColSizeY
-	sprite.scale.x = originalSpriteSizeX
-	sprite.scale.y = originalSpriteSizeY
+	sprite.scale = originalSpriteSize
+	collisionPolygon.scale = originalColSize
 	
 func reset_weapon():
 	bow.set_process(false)
@@ -59,19 +53,15 @@ func apply_effect(effect : String) -> void:
 	if (effect) == "Petit":
 		#- size sprite and col
 		reset_size_word()
-		sprite.scale.x -= 0.1
-		sprite.scale.y -= 0.1
-		collisionPolygon.scale.x -= 0.1
-		collisionPolygon.scale.y -= 0.1
+		sprite.scale -= Vector2(0.1,0.1)
+		collisionPolygon.scale -= Vector2(0.1,0.1)
 		
 	#for major sprite and coollision size
 	if (effect) == "Grand":
 		#+ size sprite and collision
 		reset_size_word()
-		sprite.scale.x += 0.1
-		sprite.scale.y += 0.1
-		collisionPolygon.scale.x -= 0.1
-		collisionPolygon.scale.y -= 0.1
+		sprite.scale += Vector2(0.1,0.1)
+		collisionPolygon.scale += Vector2(0.1,0.1)
 	#
 		#Switch épée / arc
 	if (effect) == "Epée":

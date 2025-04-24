@@ -1,6 +1,31 @@
-[gd_scene load_steps=2 format=3 uid="uid://jmrvrrt2juxe"]
+[gd_scene load_steps=4 format=3 uid="uid://jmrvrrt2juxe"]
 
 [ext_resource type="Script" uid="uid://dsqbntxofs42p" path="res://health_manager.gd" id="1_1bypw"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1bypw"]
+bg_color = Color(0.897647, 0.296268, 0.319751, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eur3r"]
+bg_color = Color(0.371698, 0.675363, 0.502993, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_detail = 9
+
 [node name="HealthManager" type="Node2D"]
 script = ExtResource("1_1bypw")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_right = 108.0
+offset_bottom = 20.0
+theme_override_font_sizes/font_size = 10
+theme_override_styles/background = SubResource("StyleBoxFlat_1bypw")
+theme_override_styles/fill = SubResource("StyleBoxFlat_eur3r")
+step = 1.0
+value = 50.0
