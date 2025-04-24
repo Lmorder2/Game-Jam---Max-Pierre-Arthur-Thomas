@@ -84,11 +84,12 @@ healthManager = NodePath("../HealthManager")
 
 [node name="HealthManager" parent="." instance=ExtResource("7_7ulmv")]
 position = Vector2(-55, 16)
+healthMax = 150.0
 
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
-[connection signal="body_entered" from="kill_area" to="." method="_on_kill_area_body_entered"]
 [connection signal="body_entered" from="kill_area" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="kill_area" to="." method="_on_kill_area_body_entered"]
 
 [editable path="BoxMots"]
 [editable path="BoxMots/HBoxContainer/Case1"]

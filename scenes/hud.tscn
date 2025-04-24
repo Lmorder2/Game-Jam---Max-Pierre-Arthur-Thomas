@@ -123,7 +123,7 @@ acceptedClass = 2
 offset_top = 0.0
 offset_bottom = 0.0
 theme_override_colors/font_color = Color(0.156863, 1, 1, 0)
-text = "Slow"
+text = "Immobile"
 
 [node name="Case7" parent="TextureRect/GridContainer" instance=ExtResource("1_5ysmq")]
 custom_minimum_size = Vector2(45, 37)

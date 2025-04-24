@@ -26,8 +26,7 @@ func life_max_update():
 	lifeBar.set_max(healthMax)
 	
 func _process(delta):
-	lifeBar.set_max(healthMax)
-	lifeBar.set_value(healthActual)
+	pass
 		
 
 func take_damage(amount):
@@ -37,8 +36,8 @@ func take_damage(amount):
 		healthActual = 0
 		print("DEAAAD")
 		amount = 0
-	elif healthCalc >=100:
-		healthActual = 100
+	elif healthCalc >= healthMax :
+		healthActual = healthMax
 		print("full vie max")
 		amount = 0
 	else:
