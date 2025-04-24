@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://brjokpyapc4ly" path="res://room_bottom.tscn" id="11_2u3nc"]
 [ext_resource type="PackedScene" uid="uid://d1yy4d83uqw5v" path="res://room_all.tscn" id="15_2u3nc"]
 [ext_resource type="PackedScene" uid="uid://comh65adnc5k1" path="res://room_top_left_v2.tscn" id="15_hiqwa"]
-[ext_resource type="PackedScene" path="res://mob.tscn" id="16_2u3nc"]
+[ext_resource type="PackedScene" uid="uid://gufn86q16sm5" path="res://mob.tscn" id="16_2u3nc"]
 
 [node name="World" type="Node2D"]
 
@@ -62,5 +62,6 @@ position = Vector2(320, -180)
 
 [node name="DungeonRoom2" parent="." instance=ExtResource("15_2u3nc")]
 
-[node name="mob" parent="." instance=ExtResource("16_2u3nc")]
-position = Vector2(-224, 92)
+[node name="mob2" parent="." instance=ExtResource("16_2u3nc")]
+position = Vector2(144, 96)
+scale = Vector2(0.4, 0.4)

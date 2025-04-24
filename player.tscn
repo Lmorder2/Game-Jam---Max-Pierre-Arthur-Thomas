@@ -1,7 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://c43gvymefayp4"]
 
 [ext_resource type="Script" uid="uid://q6rcrapxhysk" path="res://player.gd" id="1_1umnt"]
-[ext_resource type="PackedScene" uid="uid://dpqkg4irwsyy2" path="res://effects.tscn" id="2_2hs0m"]
 [ext_resource type="Texture2D" uid="uid://1cu34c517h2s" path="res://icon.svg" id="2_hqtel"]
 [ext_resource type="PackedScene" uid="uid://631u8nj6fu44" path="res://scenes/BoxMots.tscn" id="4_hqtel"]
 [ext_resource type="PackedScene" uid="uid://cwd5s8o6mowxi" path="res://weapons_bow.tscn" id="4_sweqy"]
@@ -9,19 +8,27 @@
 [ext_resource type="PackedScene" uid="uid://cq6t8dcxw7yom" path="res://effect_manager.tscn" id="7_1jxqw"]
 [ext_resource type="PackedScene" uid="uid://jmrvrrt2juxe" path="res://health_manager.tscn" id="8_dw050"]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_1jxqw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hqtel")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_1umnt")
 
-[node name="EffectsPoison" parent="." instance=ExtResource("2_2hs0m")]
-position = Vector2(0, -1)
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 self_modulate = Color(1, 1, 1, 0.505882)
 show_behind_parent = true
 position = Vector2(0, -7.012)
 scale = Vector2(0.06, 0.109187)
-texture = ExtResource("2_hqtel")
+sprite_frames = SubResource("SpriteFrames_1jxqw")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-4, -10)
@@ -34,35 +41,28 @@ offset_right = 49.0
 offset_bottom = -24.0
 effect_manager = NodePath("../EffectManager")
 
-[node name="Label" parent="BoxMots/HBoxContainer/Case1" index="0"]
-text = "Normal"
-
-[node name="Label" parent="BoxMots/HBoxContainer/Case2" index="0"]
-text = "Epée"
-
-[node name="Label" parent="BoxMots/HBoxContainer/Case3" index="0"]
-text = "Aucun"
-
-[node name="Label" parent="BoxMots/HBoxContainer/Case4" index="0"]
-text = "Aucune"
+[node name="HBoxContainer" parent="BoxMots" index="0"]
+alignment = 1
 
 [node name="weaponsBow" parent="." instance=ExtResource("4_sweqy")]
+is_player = true
 
 [node name="weaponsSword" parent="." instance=ExtResource("5_2hs0m")]
+is_player = true
 
-[node name="EffectManager" parent="." node_paths=PackedStringArray("sprite", "collisionPolygon", "sword", "bow") instance=ExtResource("7_1jxqw")]
+[node name="EffectManager" parent="." node_paths=PackedStringArray("sprite", "collisionPolygon", "sword", "bow", "healthManager") instance=ExtResource("7_1jxqw")]
 sprite = NodePath("../Sprite2D")
 collisionPolygon = NodePath("../CollisionPolygon2D")
 sword = NodePath("../weaponsSword")
 bow = NodePath("../weaponsBow")
+healthManager = NodePath("../HealthManager")
 
 [node name="HealthManager" parent="." instance=ExtResource("8_dw050")]
 
 [node name="ProgressBar" parent="HealthManager" index="0"]
-offset_left = -56.0
-offset_top = -2.0
-offset_right = 52.0
-offset_bottom = 18.0
+offset_left = -13.0
+offset_right = 12.0
+offset_bottom = 4.0
 
 [editable path="BoxMots"]
 [editable path="BoxMots/HBoxContainer/Case1"]

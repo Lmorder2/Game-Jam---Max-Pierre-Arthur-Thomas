@@ -5,6 +5,7 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="EffectPoison" type="CPUParticles2D" parent="."]
+visible = false
 amount = 5
 texture = ExtResource("1_oaf0w")
 emission_shape = 1

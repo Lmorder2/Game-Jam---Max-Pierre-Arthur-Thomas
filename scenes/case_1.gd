@@ -51,17 +51,28 @@ func _get_drag_data(position):
 
 	
 func _can_drop_data(_pos, data):
-
+	if canDrop == false:
+		return false
+	
+	if data["text"] == $Label.text:
+		return false
+	
 	if data["class"] == acceptedClass or data["class"] == WORD_CLASSES.RESET :
 		return true
 	else:
 		return false
+		
+func reset_case():
+	var obj = {}
+	obj["text"] = "Reset"
+	_drop_data(Vector2.ZERO, obj)
 	
 func _drop_data(_pos, data):
 	if data["text"] != "Reset":
 		$Label.text=data["text"]
 		print(data["text"])
-		effect_manager.apply_effect(data["text"])
+		effect_manager.apply_effect(data["text"], get_node(get_path()))
+
 	else:
 		#reset de la taille
 		if acceptedClass == WORD_CLASSES.SIZE:
