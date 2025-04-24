@@ -40,12 +40,7 @@ acceptedClass = 1
 [node name="Label" parent="ColorRect/GridContainer/Case1" index="0"]
 offset_left = 2.0
 offset_bottom = 0.419998
-<<<<<<< HEAD
-theme_override_colors/font_color = Color(0.172549, 0.858824, 0.847059, 1)
-text = "Grow"
-=======
 text = "Grand"
->>>>>>> e365ac750011c7ee235152ed771dcf296864cb01
 
 [node name="Case2" parent="ColorRect/GridContainer" instance=ExtResource("1_5ysmq")]
 custom_minimum_size = Vector2(45, 37)
@@ -57,7 +52,7 @@ acceptedClass = 1
 offset_left = -1.0
 offset_right = -2.0
 offset_bottom = 0.419998
-text = "Skrink"
+text = "Petit"
 
 [node name="Case3" parent="ColorRect/GridContainer" instance=ExtResource("1_5ysmq")]
 custom_minimum_size = Vector2(45, 37)
@@ -65,7 +60,7 @@ layout_mode = 2
 texture = ExtResource("3_047uy")
 
 [node name="Label" parent="ColorRect/GridContainer/Case3" index="0"]
-text = "Sword"
+text = "Epée"
 
 [node name="Case4" parent="ColorRect/GridContainer" instance=ExtResource("1_5ysmq")]
 custom_minimum_size = Vector2(45, 37)
@@ -73,7 +68,7 @@ layout_mode = 2
 texture = ExtResource("3_047uy")
 
 [node name="Label" parent="ColorRect/GridContainer/Case4" index="0"]
-text = "Bow"
+text = "Arc"
 
 [node name="Case5" parent="ColorRect/GridContainer" instance=ExtResource("1_5ysmq")]
 custom_minimum_size = Vector2(45, 37)
@@ -95,7 +90,7 @@ offset_left = 0.214678
 offset_top = 0.290001
 offset_right = 0.214676
 offset_bottom = 0.290001
-text = "Slow"
+text = "Ralenti"
 
 [node name="Case7" parent="ColorRect/GridContainer" instance=ExtResource("1_5ysmq")]
 custom_minimum_size = Vector2(45, 37)
