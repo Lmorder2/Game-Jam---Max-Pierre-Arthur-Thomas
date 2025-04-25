@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://comh65adnc5k1"]
+[gd_scene load_steps=9 format=3 uid="uid://comh65adnc5k1"]
 
 [ext_resource type="Script" uid="uid://3d34kkpadtkr" path="res://room_all.gd" id="1_dfluo"]
 [ext_resource type="Texture2D" uid="uid://cgre2csa10je" path="res://dungeon_rooms/top_left.png" id="2_scyc3"]
 [ext_resource type="Texture2D" uid="uid://bkx2epnt5ymb7" path="res://dungeon_rooms/basic_dungeon_room.png" id="2_tr1js"]
 [ext_resource type="PackedScene" uid="uid://cqfaktsu0eir" path="res://door.tscn" id="3_scyc3"]
+[ext_resource type="PackedScene" uid="uid://08is53654krc" path="res://mob.tscn" id="5_5mybx"]
+[ext_resource type="PackedScene" uid="uid://dsnhj5r6llvnc" path="res://drop_immobile.tscn" id="6_t84nt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ecl6m"]
 size = Vector2(224, 112)
@@ -68,6 +70,10 @@ position = Vector2(-92, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorLeft"]
 shape = SubResource("RectangleShape2D_6yqxi")
+
+[node name="mob" parent="." instance=ExtResource("5_5mybx")]
+position = Vector2(93, 102)
+drop_scene = ExtResource("6_t84nt")
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
 

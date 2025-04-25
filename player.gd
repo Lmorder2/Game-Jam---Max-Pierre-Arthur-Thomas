@@ -1,5 +1,5 @@
 extends CharacterBody2D
-var damage_amount = 50
+var damage_amount = 500.0
 const MAX_SPEED = 100.0
 const ACCELERATION = 1000.0
 const FRICTION = 500.0

@@ -90,8 +90,9 @@ position = Vector2(320, -180)
 
 [node name="DungeonRoom2" parent="." instance=ExtResource("15_2u3nc")]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="MainMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_udxuc")
+volume_db = 1.631
 autoplay = true
 
 [editable path="Chest2"]
