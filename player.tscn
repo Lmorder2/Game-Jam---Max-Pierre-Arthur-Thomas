@@ -121,6 +121,7 @@ bow = NodePath("../weaponsBow")
 healthManager = NodePath("../HealthManager")
 
 [node name="HealthManager" parent="." instance=ExtResource("8_dw050")]
+healthMax = 200.0
 
 [node name="ProgressBar" parent="HealthManager" index="0"]
 offset_left = -13.0
@@ -133,5 +134,4 @@ offset_bottom = 4.0
 [editable path="BoxMots/HBoxContainer/Case1"]
 [editable path="BoxMots/HBoxContainer/Case2"]
 [editable path="BoxMots/HBoxContainer/Case3"]
-[editable path="BoxMots/HBoxContainer/Case4"]
 [editable path="HealthManager"]

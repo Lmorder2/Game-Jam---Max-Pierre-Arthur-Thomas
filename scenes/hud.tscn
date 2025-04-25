@@ -69,16 +69,6 @@ offset_bottom = 0.0
 theme_override_colors/font_color = Color(0, 0, 0, 0)
 text = "Grand"
 
-[node name="Case1Lock" type="TextureRect" parent="TextureRect/GridContainer/Case1"]
-visible = false
-modulate = Color(0.427493, 0.427493, 0.427493, 1)
-layout_mode = 0
-offset_left = -0.491279
-offset_top = -0.469625
-offset_right = 44.5087
-offset_bottom = 36.5304
-texture = ExtResource("2_5pdws")
-
 [node name="Case2" parent="TextureRect/GridContainer" instance=ExtResource("1_5ysmq")]
 custom_minimum_size = Vector2(45, 37)
 layout_mode = 2
@@ -91,14 +81,6 @@ offset_bottom = 0.0
 theme_override_colors/font_color = Color(0.156863, 1, 1, 0)
 text = "Petit"
 
-[node name="Case2Lock" type="TextureRect" parent="TextureRect/GridContainer/Case2"]
-visible = false
-modulate = Color(0.427451, 0.427451, 0.427451, 1)
-layout_mode = 0
-offset_right = 45.0
-offset_bottom = 37.0
-texture = ExtResource("3_hd3ao")
-
 [node name="Case3" parent="TextureRect/GridContainer" instance=ExtResource("1_5ysmq")]
 custom_minimum_size = Vector2(45, 37)
 layout_mode = 2
@@ -110,14 +92,6 @@ offset_bottom = 0.0
 theme_override_colors/font_color = Color(0.156863, 1, 1, 0)
 text = "Epée"
 
-[node name="Case3Lock" type="TextureRect" parent="TextureRect/GridContainer/Case3"]
-visible = false
-modulate = Color(0.427451, 0.427451, 0.427451, 1)
-layout_mode = 0
-offset_right = 45.0
-offset_bottom = 37.0
-texture = ExtResource("4_0i1j5")
-
 [node name="Case4" parent="TextureRect/GridContainer" instance=ExtResource("1_5ysmq")]
 custom_minimum_size = Vector2(45, 37)
 layout_mode = 2
@@ -128,11 +102,6 @@ offset_top = 0.0
 offset_bottom = 0.0
 theme_override_colors/font_color = Color(0.156863, 1, 1, 0)
 text = "Arc"
-
-[node name="TextureRect" type="TextureRect" parent="TextureRect/GridContainer/Case4"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
 [node name="Case5" parent="TextureRect/GridContainer" instance=ExtResource("1_5ysmq")]
 custom_minimum_size = Vector2(45, 37)

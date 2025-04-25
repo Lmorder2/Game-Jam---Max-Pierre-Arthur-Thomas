@@ -39,6 +39,7 @@ func take_damage(amount):
 		amount = 0
 		life_update()
 		death.emit()
+		print("death")
 		
 	elif healthCalc >= healthMax :
 		healthActual = healthMax
