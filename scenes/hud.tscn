@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cu2dl4vtewxwg"]
+[gd_scene load_steps=12 format=3 uid="uid://cu2dl4vtewxwg"]
 
 [ext_resource type="Texture2D" uid="uid://caj4xrea1i5cc" path="res://fond.png" id="1_0i1j5"]
 [ext_resource type="PackedScene" uid="uid://b6roqvdffbw0i" path="res://scenes/case_hud.tscn" id="1_5ysmq"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c8gv40h7im2u1" path="res://word_poison.png" id="6_hd3ao"]
 [ext_resource type="Texture2D" uid="uid://rtnjukfuvj5g" path="res://word_slow.png" id="7_0i1j5"]
 [ext_resource type="Texture2D" uid="uid://cqjdxma4gjhn8" path="res://word_test.png" id="8_hd3ao"]
+[ext_resource type="Texture2D" uid="uid://d4hmoewttygof" path="res://word_reset.png" id="11_0m4u7"]
 
 [node name="Control" type="CanvasLayer"]
 
@@ -152,7 +153,7 @@ text = "Armr2"
 [node name="Case9" parent="TextureRect/GridContainer" instance=ExtResource("1_5ysmq")]
 custom_minimum_size = Vector2(45, 37)
 layout_mode = 2
-texture = ExtResource("8_hd3ao")
+texture = ExtResource("11_0m4u7")
 acceptedClass = 4
 
 [node name="Label" parent="TextureRect/GridContainer/Case9" index="0"]
