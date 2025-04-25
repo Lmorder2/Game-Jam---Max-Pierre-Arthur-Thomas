@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://jwrlx7yftqu1" path="res://dungeon_rooms/bottom_right_left.png" id="2_2bdbw"]
 [ext_resource type="Texture2D" uid="uid://bkx2epnt5ymb7" path="res://dungeon_rooms/basic_dungeon_room.png" id="3_1xygv"]
 [ext_resource type="PackedScene" uid="uid://cqfaktsu0eir" path="res://door.tscn" id="4_qaf6p"]
-[ext_resource type="PackedScene" uid="uid://vquj42g8pf15" path="res://collisions_player.tscn" id="5_h2nqs"]
-[ext_resource type="PackedScene" uid="uid://gufn86q16sm5" path="res://mob.tscn" id="6_1xygv"]
+[ext_resource type="PackedScene" uid="uid://dki53yd54j7ug" path="res://collisions_player.tscn" id="5_h2nqs"]
+[ext_resource type="PackedScene" uid="uid://08is53654krc" path="res://mob.tscn" id="6_1xygv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ecl6m"]
 size = Vector2(224, 112)
