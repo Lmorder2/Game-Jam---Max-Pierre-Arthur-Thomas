@@ -43,3 +43,7 @@ func _on_mob_attack_timer_timeout() -> void:
 	if(player):
 		$WeaponsSword.activate_sword_attack()
 		$WeaponsBow.activate_sword_attack()
+
+
+func attack(player):
+	player.get_node("HealthManager").take_damage(5)

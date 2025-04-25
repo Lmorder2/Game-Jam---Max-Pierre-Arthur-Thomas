@@ -20,13 +20,16 @@ func _process(delta):
 			activate_sword_attack()
 		look_at(get_global_mouse_position())
 
-func look_at_target(target):
-	look_at(target)
+func look_at_target(target: Vector2) -> void:
+	var target_angle = (target - global_position).angle()
+	rotation = lerp_angle(rotation, target_angle, 0.06)  # 0.1 = vitesse de rotation
+
 	
 func activate_sword_attack():
 	monitoring = true
 	$Sprite2D.visible = true
 	await get_tree().create_timer(attack_duration).timeout
+	
 	
 	monitoring = false
 	$Sprite2D.visible = false

@@ -356,11 +356,14 @@ offset_bottom = -17.0
 effect_manager = NodePath("../EffectManager")
 
 [node name="WeaponsSword" parent="." instance=ExtResource("3_ubaqv")]
+visibility_layer = 2
 scale = Vector2(3, 3)
-collision_mask = 1
+collision_mask = 2
 
 [node name="WeaponsBow" parent="." instance=ExtResource("5_gfurk")]
+visibility_layer = 2
 scale = Vector2(3, 3)
+collision_mask = 2
 
 [node name="EffectManager" parent="." node_paths=PackedStringArray("sprite", "collisionPolygon", "sword", "bow", "healthManager") instance=ExtResource("6_ieysi")]
 sprite = NodePath("../AnimatedSprite2D")

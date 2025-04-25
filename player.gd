@@ -7,7 +7,7 @@ const FRICTION = 500.0
 #@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 #mouvement 
 func _physics_process(delta: float) -> void:
-	var input = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	var input = Input.get_vector("left", "right", "up", "down")
 	if input.length() > 0:
 	#	animated_sprite_2d.play("run")
 		velocity = velocity.move_toward(input * MAX_SPEED, ACCELERATION * delta)
