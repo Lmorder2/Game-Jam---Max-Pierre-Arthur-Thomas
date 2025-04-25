@@ -73,7 +73,7 @@ func apply_effect(effect : String, case) -> void:
 		bow.scale -= scaleEffect
 		sword.scale -= scaleEffect
 		$"..".acceleration_ratio = 1.5
-		$"..".damage_amount -= 5
+		$"..".damage_amount *= 0.5
 
 		
 		
@@ -86,7 +86,7 @@ func apply_effect(effect : String, case) -> void:
 		bow.scale += scaleEffect
 		sword.scale += scaleEffect
 		$"..".acceleration_ratio = 0.5
-		$"..".damage_amount += 5
+		$"..".damage_amount *= 2
 	#
 		#Switch épée / arc
 	if (effect) == "Epée":
@@ -110,7 +110,7 @@ func apply_effect(effect : String, case) -> void:
 		$ParticlePoison.emitting = true
 		for i in range(5):
 			$PoisonTimer.wait_time = 5
-			healthManager.amount = 3
+			healthManager.amount = 10
 			healthManager.take_damage(healthManager.amount)
 			$PoisonTimer.start()
 			await $PoisonTimer.timeout
