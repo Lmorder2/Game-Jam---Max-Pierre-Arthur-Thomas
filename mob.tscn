@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://08is53654krc"]
+[gd_scene load_steps=20 format=3 uid="uid://08is53654krc"]
 
 [ext_resource type="Script" uid="uid://pppfh7kbpexg" path="res://mob.gd" id="1_nokgg"]
 [ext_resource type="Texture2D" uid="uid://ddl1fjtflwgw" path="res://Sprites/0x72_DungeonTilesetII_v1.7.png" id="2_1qmh0"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://cwd5s8o6mowxi" path="res://weapons_bow.tscn" id="5_gfurk"]
 [ext_resource type="PackedScene" uid="uid://cq6t8dcxw7yom" path="res://effect_manager.tscn" id="6_ieysi"]
 [ext_resource type="PackedScene" uid="uid://jmrvrrt2juxe" path="res://health_manager.tscn" id="7_cixyi"]
-[ext_resource type="AudioStream" uid="uid://m44phxv3pyt4" path="res://Bloody Stream [8-Bit; VRC6] - JoJos Bizarre Adventure OP 2 (1).wav" id="8_gfurk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gfurk"]
 atlas = ExtResource("2_1qmh0")
@@ -129,10 +128,10 @@ scale = Vector2(1e-05, 1e-05)
 shape = SubResource("RectangleShape2D_p11y5")
 
 [node name="BoxMots" parent="." node_paths=PackedStringArray("effect_manager") instance=ExtResource("3_1qmh0")]
-offset_left = -50.0
-offset_top = -37.0
-offset_right = 50.0
-offset_bottom = -17.0
+offset_left = -38.0
+offset_top = -36.0
+offset_right = 35.0
+offset_bottom = -16.0
 effect_manager = NodePath("../EffectManager")
 
 [node name="WeaponsSword" parent="." instance=ExtResource("3_ubaqv")]
@@ -163,12 +162,11 @@ wait_time = 5.0
 autostart = true
 
 [node name="mobsound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("8_gfurk")
 autoplay = true
 
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
-[connection signal="body_entered" from="kill_area" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="kill_area" to="." method="_on_kill_area_body_entered"]
+[connection signal="body_entered" from="kill_area" to="." method="_on_area_2d_body_entered"]
 [connection signal="death" from="HealthManager" to="." method="_on_health_manager_death"]
 [connection signal="timeout" from="MobAttackTimer" to="." method="_on_mob_attack_timer_timeout"]

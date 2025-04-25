@@ -2,12 +2,13 @@
 
 [ext_resource type="Script" uid="uid://cji20o27fxddu" path="res://scenes/color_rect_2.gd" id="1_huars"]
 [ext_resource type="PackedScene" uid="uid://b6roqvdffbw0i" path="res://scenes/case_hud.tscn" id="2_84gdq"]
-[ext_resource type="Texture2D" uid="uid://7gba347vb7vx" path="res://shadowSize.png" id="3_8lv8s"]
-[ext_resource type="Texture2D" uid="uid://bns7pf31px5wm" path="res://shadowWeapon.png" id="4_kaap1"]
-[ext_resource type="Texture2D" uid="uid://domqrlgpnd7t6" path="res://shadowEffect.png" id="5_wxcux"]
+[ext_resource type="Texture2D" uid="uid://gea8kto3nmcn" path="res://word_size.png" id="3_4twr7"]
+[ext_resource type="Texture2D" uid="uid://d0hb7aua6b6m1" path="res://word_weapon.png" id="4_8lv8s"]
+[ext_resource type="Texture2D" uid="uid://rvii0ptgpqk7" path="res://word_effect.png" id="5_kaap1"]
 
 [node name="BoxMots" type="ColorRect"]
-offset_right = 86.0
+offset_left = 6.0
+offset_right = 79.0
 offset_bottom = 20.0
 script = ExtResource("1_huars")
 
@@ -16,54 +17,58 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 1.0
+offset_right = 9.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.89, 0.89)
 theme_override_constants/separation = 8
 
 [node name="Case1" parent="HBoxContainer" instance=ExtResource("2_84gdq")]
 custom_minimum_size = Vector2(22, 20)
 layout_mode = 2
-texture = ExtResource("3_8lv8s")
+texture = ExtResource("3_4twr7")
 canDrop = true
 acceptedClass = 1
 
 [node name="Label" parent="HBoxContainer/Case1" index="0"]
-offset_left = 2.0
-offset_top = 6.0
-offset_right = 32.0
-offset_bottom = 8.0
+offset_top = 0.0
+offset_right = 45.0
+offset_bottom = 39.0
 scale = Vector2(0.32821, 0.35804)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Normal"
 
 [node name="Case2" parent="HBoxContainer" instance=ExtResource("2_84gdq")]
 custom_minimum_size = Vector2(22, 20)
 layout_mode = 2
-texture = ExtResource("4_kaap1")
+texture = ExtResource("4_8lv8s")
 canDrop = true
 
 [node name="Label" parent="HBoxContainer/Case2" index="0"]
-offset_left = 2.0
-offset_top = 6.0
-offset_right = 32.0
-offset_bottom = 8.0
+offset_top = 0.0
+offset_right = 45.0
+offset_bottom = 39.0
 scale = Vector2(0.32821, 0.35804)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Epée"
 
 [node name="Case3" parent="HBoxContainer" instance=ExtResource("2_84gdq")]
 custom_minimum_size = Vector2(22, 20)
 layout_mode = 2
-texture = ExtResource("5_wxcux")
+texture = ExtResource("5_kaap1")
 canDrop = true
 acceptedClass = 2
 
 [node name="Label" parent="HBoxContainer/Case3" index="0"]
-offset_left = 2.0
-offset_top = 6.0
-offset_right = 32.0
-offset_bottom = 8.0
+offset_top = 0.0
+offset_right = 45.0
+offset_bottom = 39.0
 scale = Vector2(0.32821, 0.35804)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Aucun"
 
