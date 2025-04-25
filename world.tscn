@@ -22,10 +22,9 @@
 
 [node name="World" type="Node2D"]
 
-[node name="Player" parent="." node_paths=PackedStringArray("START_GAME") instance=ExtResource("2_mpfnx")]
+[node name="Player" parent="." instance=ExtResource("2_mpfnx")]
 position = Vector2(160, 279)
 motion_mode = 1
-START_GAME = NodePath("../START_GAME")
 
 [node name="spawn" parent="." instance=ExtResource("2_gbfbk")]
 position = Vector2(0, 180)

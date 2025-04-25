@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ddl1fjtflwgw" path="res://Sprites/0x72_DungeonTilesetII_v1.7.png" id="2_1jxqw"]
 [ext_resource type="PackedScene" uid="uid://631u8nj6fu44" path="res://scenes/BoxMots.tscn" id="4_hqtel"]
 [ext_resource type="PackedScene" uid="uid://cwd5s8o6mowxi" path="res://weapons_bow.tscn" id="4_sweqy"]
-[ext_resource type="PackedScene" uid="uid://deq8hkxk6tmko" path="res://weapons_sword.tscn" id="5_2hs0m"]
+[ext_resource type="PackedScene" path="res://weapons_sword.tscn" id="5_2hs0m"]
 [ext_resource type="PackedScene" uid="uid://cq6t8dcxw7yom" path="res://effect_manager.tscn" id="7_1jxqw"]
 [ext_resource type="PackedScene" uid="uid://jmrvrrt2juxe" path="res://health_manager.tscn" id="8_dw050"]
 
@@ -131,5 +131,4 @@ offset_bottom = 4.0
 [editable path="BoxMots/HBoxContainer/Case1"]
 [editable path="BoxMots/HBoxContainer/Case2"]
 [editable path="BoxMots/HBoxContainer/Case3"]
-[editable path="BoxMots/HBoxContainer/Case4"]
 [editable path="HealthManager"]
