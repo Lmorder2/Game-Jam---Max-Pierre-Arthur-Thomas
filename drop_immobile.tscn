@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsnhj5r6llvnc"]
+
+[ext_resource type="Script" uid="uid://bhfnppg2uuqwq" path="res://drop.gd" id="1_wy55b"]
+[ext_resource type="Texture2D" uid="uid://rtnjukfuvj5g" path="res://word_slow.png" id="2_wy55b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f4jv2"]
+size = Vector2(44, 32)
+
+[node name="drop" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_wy55b")
+item_name = "Grand"
+
+[node name="DropChest" type="Sprite2D" parent="."]
+light_mask = 3
+position = Vector2(42.8, 24)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_wy55b")
+
+[node name="dropchest_collision" type="CollisionShape2D" parent="."]
+light_mask = 3
+position = Vector2(42.8, 24)
+scale = Vector2(0.6, 0.6)
+shape = SubResource("RectangleShape2D_f4jv2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

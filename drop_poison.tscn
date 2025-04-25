@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://blqj8ivs6v762"]
+
+[ext_resource type="Script" uid="uid://bhfnppg2uuqwq" path="res://drop.gd" id="1_urk7s"]
+[ext_resource type="Texture2D" uid="uid://c8gv40h7im2u1" path="res://word_poison.png" id="2_urk7s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f4jv2"]
+size = Vector2(44, 32)
+
+[node name="drop" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_urk7s")
+item_name = "Grand"
+
+[node name="DropChest" type="Sprite2D" parent="."]
+light_mask = 3
+position = Vector2(42.8, 24)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_urk7s")
+
+[node name="dropchest_collision" type="CollisionShape2D" parent="."]
+light_mask = 3
+position = Vector2(42.8, 24)
+scale = Vector2(0.6, 0.6)
+shape = SubResource("RectangleShape2D_f4jv2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

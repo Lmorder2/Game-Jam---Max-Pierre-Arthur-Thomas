@@ -1,29 +1,67 @@
-[gd_scene load_steps=4 format=3 uid="uid://cwd5s8o6mowxi"]
+[gd_scene load_steps=9 format=3 uid="uid://cwd5s8o6mowxi"]
 
 [ext_resource type="Script" uid="uid://ch578lxvaxe8m" path="res://weapons.gd" id="1_y178t"]
+[ext_resource type="Texture2D" uid="uid://c6d8xahgygiu8" path="res://Sprites/frames/weapon_bow.png" id="2_6u2um"]
+[ext_resource type="Texture2D" uid="uid://cmvvjhovgxnka" path="res://flèche.png" id="3_wsh23"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_hqtel"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8fkb"]
+atlas = ExtResource("3_wsh23")
+region = Rect2(1622, 255, 298, 825)
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_y178t"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_agsf8"]
+atlas = ExtResource("3_wsh23")
+region = Rect2(1324, 255, 298, 825)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cis8o"]
+atlas = ExtResource("3_wsh23")
+region = Rect2(1026, 255, 298, 825)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nkvhc"]
+atlas = ExtResource("3_wsh23")
+region = Rect2(728, 255, 298, 825)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jtm4i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k8fkb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_agsf8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cis8o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nkvhc")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 19.0
+}]
 
 [node name="WeaponsBow" type="Area2D" node_paths=PackedStringArray("hitbox")]
 collision_mask = 4
 script = ExtResource("1_y178t")
 hitbox = NodePath("BowAttack")
 
-[node name="Bow" type="Sprite2D" parent="."]
+[node name="weapon" type="Sprite2D" parent="."]
 show_behind_parent = true
-scale = Vector2(1, 12.25)
-texture = SubResource("CanvasTexture_hqtel")
+position = Vector2(-0.855686, 0)
+scale = Vector2(0.712857, 0.769231)
+texture = ExtResource("2_6u2um")
 offset = Vector2(4.02, 0)
 
 [node name="BowAttack" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(0, 0, 44, -2, 44, 2)
+polygon = PackedVector2Array(0, 0, 67, -2, 67, 2)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(21.75, 0)
-scale = Vector2(44.5, 4)
-texture = SubResource("PlaceholderTexture2D_y178t")
+[node name="WeaponAnimation" type="AnimatedSprite2D" parent="."]
+position = Vector2(28, 0)
+rotation = 1.5708
+scale = Vector2(0.107902, 0.102997)
+sprite_frames = SubResource("SpriteFrames_jtm4i")
+animation = &"attack"
+frame = 3
+frame_progress = 1.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

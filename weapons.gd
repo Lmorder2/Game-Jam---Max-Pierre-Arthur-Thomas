@@ -4,15 +4,16 @@ extends Area2D
 @export var hitbox : CollisionPolygon2D
 var attack_duration = 0.2  # Durée d'activation de la hitbox
 
+@onready var animation_player = $WeaponAnimation
+
 @export var is_player = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	monitoring = false
 	
-	$Sprite2D.visible = false  # Si c'est une CollisionShape2D ou Area2D
+	$WeaponAnimation.visible = false  # Si c'est une CollisionShape2D ou Area2D
 	# sinon, utilise sword_attack.visible = false
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -30,12 +31,15 @@ func look_at_target(target: Vector2) -> void:
 	
 func activate_sword_attack():
 	monitoring = true
-	$Sprite2D.visible = true
+
+	$WeaponAnimation.visible = true
+	animation_player.play("attack")
+	$weapon.visible = false
 	await get_tree().create_timer(attack_duration).timeout
 	
-	
 	monitoring = false
-	$Sprite2D.visible = false
+	$weapon.visible = true
+	$WeaponAnimation.visible = false
 
 func _on_body_entered(body: Node2D) -> void:
 	if(get_parent().has_method("attack")):
