@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://p6sftspc5d67"]
 
-[ext_resource type="Script" uid="uid://3d34kkpadtkr" path="res://room_all.gd" id="1_avka1"]
+[ext_resource type="Script" path="res://room_all.gd" id="1_avka1"]
 [ext_resource type="Texture2D" uid="uid://dnon74iy080fq" path="res://dungeon_rooms/bottom.png" id="2_p0ly0"]
 [ext_resource type="Texture2D" uid="uid://bkx2epnt5ymb7" path="res://dungeon_rooms/basic_dungeon_room.png" id="3_x5hb5"]
 [ext_resource type="PackedScene" uid="uid://cqfaktsu0eir" path="res://door.tscn" id="4_lmeir"]
-[ext_resource type="PackedScene" uid="uid://6rh6s5bknul" path="res://golem_boss.tscn" id="5_p0ly0"]
+[ext_resource type="PackedScene" uid="uid://08is53654krc" path="res://mob.tscn" id="6_lmeir"]
 [ext_resource type="PackedScene" uid="uid://c43gvymefayp4" path="res://player.tscn" id="6_x5hb5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ecl6m"]
@@ -61,12 +61,18 @@ position = Vector2(0, 70)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorDown"]
 shape = SubResource("RectangleShape2D_6yqxi")
 
-[node name="GolemBoss" parent="." instance=ExtResource("5_p0ly0")]
-position = Vector2(78, 66)
-
 [node name="Player" parent="." instance=ExtResource("6_x5hb5")]
-position = Vector2(249, 67)
+position = Vector2(207, 132)
+
+[node name="mob" parent="." instance=ExtResource("6_lmeir")]
+position = Vector2(168, 64)
+scale = Vector2(0.76, 0.76)
+
+[node name="WeaponsBow" parent="mob" index="6"]
+attackSpeedArg1 = 0.6
+attackSpeedArg2 = 0.8
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
 
 [editable path="DoorDown"]
+[editable path="mob"]

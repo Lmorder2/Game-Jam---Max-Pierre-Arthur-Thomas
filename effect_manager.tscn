@@ -1,11 +1,24 @@
 [gd_scene load_steps=3 format=3 uid="uid://cq6t8dcxw7yom"]
 
 [ext_resource type="Script" uid="uid://c0o3fkq838mii" path="res://scenes/effect_manager.gd" id="1_apoux"]
-[ext_resource type="PackedScene" uid="uid://dpqkg4irwsyy2" path="res://effects.tscn" id="2_78pv1"]
+[ext_resource type="Texture2D" uid="uid://j5kwuv14rae8" path="res://poison_particle.png" id="2_78pv1"]
 
 [node name="EffectManager" type="Node2D"]
 script = ExtResource("1_apoux")
 
 [node name="PoisonTimer" type="Timer" parent="."]
 
-[node name="Node2D" parent="PoisonTimer" instance=ExtResource("2_78pv1")]
+[node name="StunTimer" type="Timer" parent="."]
+
+[node name="ParticlePoison" type="CPUParticles2D" parent="."]
+amount = 5
+texture = ExtResource("2_78pv1")
+emission_shape = 1
+emission_sphere_radius = 5.17
+gravity = Vector2(0, -15)
+
+[node name="ParticleStun" type="CPUParticles2D" parent="."]
+amount = 5
+emission_shape = 1
+emission_sphere_radius = 5.17
+gravity = Vector2(0, -15)
