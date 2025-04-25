@@ -155,7 +155,7 @@ healthManager = NodePath("../HealthManager")
 
 [node name="HealthManager" parent="." instance=ExtResource("7_cixyi")]
 position = Vector2(-54, 14)
-healthMax = 100000.0
+healthMax = 500.0
 
 [node name="MobAttackTimer" type="Timer" parent="."]
 wait_time = 5.0
