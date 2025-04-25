@@ -7,6 +7,8 @@ var lifeBar
 var amount
 var originalHealthMax = healthMax
 
+signal death
+
 func _ready() -> void:
 	healthActual = healthMax
 	lifeBar = $ProgressBar
@@ -35,10 +37,15 @@ func take_damage(amount):
 	if healthCalc <= 0:
 		healthActual = 0
 		amount = 0
+		life_update()
+		death.emit()
+		
 	elif healthCalc >= healthMax :
 		healthActual = healthMax
 		print("full vie max")
 		amount = 0
+		life_update()
+		
 	else:
 		healthActual -= amount
 		life_update()
