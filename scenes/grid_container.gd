@@ -21,3 +21,4 @@ func item_picked(item):
 		$Case4.show()
 	elif item == "Shrink":
 		$Case2.show()
+	

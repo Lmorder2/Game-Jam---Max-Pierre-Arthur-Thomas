@@ -95,6 +95,9 @@ stream = ExtResource("15_udxuc")
 volume_db = 1.631
 autoplay = true
 
+[node name="START_GAME" type="Node2D" parent="."]
+position = Vector2(104, 272)
+
 [editable path="Chest2"]
 [editable path="room_bottom_right/Chest3"]
 [editable path="room_bottom/Chest4"]
