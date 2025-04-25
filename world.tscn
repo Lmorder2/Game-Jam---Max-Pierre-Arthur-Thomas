@@ -22,9 +22,10 @@
 
 [node name="World" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("2_mpfnx")]
+[node name="Player" parent="." node_paths=PackedStringArray("START_GAME") instance=ExtResource("2_mpfnx")]
 position = Vector2(160, 279)
 motion_mode = 1
+START_GAME = NodePath("../START_GAME")
 
 [node name="spawn" parent="." instance=ExtResource("2_gbfbk")]
 position = Vector2(0, 180)
@@ -93,6 +94,9 @@ position = Vector2(320, -180)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_udxuc")
 autoplay = true
+
+[node name="START_GAME" type="Node2D" parent="."]
+position = Vector2(104, 272)
 
 [editable path="Chest2"]
 [editable path="room_bottom_right/Chest3"]

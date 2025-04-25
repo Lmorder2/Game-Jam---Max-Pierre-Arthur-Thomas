@@ -119,7 +119,6 @@ bow = NodePath("../weaponsBow")
 healthManager = NodePath("../HealthManager")
 
 [node name="HealthManager" parent="." instance=ExtResource("8_dw050")]
-healthMax = 200.0
 
 [node name="ProgressBar" parent="HealthManager" index="0"]
 offset_left = -13.0

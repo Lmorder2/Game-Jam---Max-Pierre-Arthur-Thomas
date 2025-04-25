@@ -1,11 +1,13 @@
 extends CharacterBody2D
-var damage_amount = 50
+var damage_amount = 500
 const MAX_SPEED = 100.0
 const ACCELERATION = 1000.0
 const FRICTION = 500.0
 var is_stun = false
 var player_chase = true
 var acceleration_ratio = 1.0
+
+@export var START_GAME : Node2D
 #@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 #mouvement 
 func _physics_process(delta: float) -> void:
