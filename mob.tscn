@@ -324,8 +324,6 @@ animation = &"marche"
 autoplay = "marche"
 frame_progress = 0.330133
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
-
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-24, 16)
 scale = Vector2(5.22031, -3.06252)
@@ -381,7 +379,7 @@ autostart = true
 
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
-[connection signal="body_entered" from="kill_area" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="kill_area" to="." method="_on_kill_area_body_entered"]
+[connection signal="body_entered" from="kill_area" to="." method="_on_area_2d_body_entered"]
 [connection signal="death" from="HealthManager" to="." method="_on_health_manager_death"]
 [connection signal="timeout" from="MobAttackTimer" to="." method="_on_mob_attack_timer_timeout"]

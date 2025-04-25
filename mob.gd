@@ -3,11 +3,15 @@ extends CharacterBody2D
 var speed = 40
 var player_chase = false
 var player = null
+@export var drop_scene: PackedScene
 
 signal death(mob: Node)
 
+
+
 func _process(delta: float) -> void:
 	if(Input.is_action_just_pressed("kill_mobs")):
+		drop_loot() 
 		emit_signal("death", self)
 		queue_free()
 
@@ -34,8 +38,11 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	pass # Replace with function body.
+	
 
+	
 func _on_health_manager_death() -> void:
+	drop_loot() 
 	emit_signal("death", self)
 	queue_free()
 
@@ -44,6 +51,12 @@ func _on_mob_attack_timer_timeout() -> void:
 		$WeaponsSword.activate_sword_attack()
 		$WeaponsBow.activate_sword_attack()
 
+func drop_loot():
+	if drop_scene:
+		var drop_instance = drop_scene.instantiate()
+		get_parent().add_child(drop_instance)
+		drop_instance.global_position = global_position
 
 func attack(player):
 	player.get_node("HealthManager").take_damage(5)
+	
