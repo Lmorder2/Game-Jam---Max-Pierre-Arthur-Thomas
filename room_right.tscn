@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ca7p560dd1f2t"]
+[gd_scene load_steps=10 format=3 uid="uid://ca7p560dd1f2t"]
 
 [ext_resource type="Script" uid="uid://3d34kkpadtkr" path="res://room_all.gd" id="1_i5w5k"]
 [ext_resource type="Texture2D" uid="uid://23npfr3llflv" path="res://dungeon_rooms/right.png" id="2_i5w5k"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cqfaktsu0eir" path="res://door.tscn" id="4_bdkjj"]
 [ext_resource type="PackedScene" uid="uid://dki53yd54j7ug" path="res://collisions_player.tscn" id="5_6ayxm"]
 [ext_resource type="PackedScene" uid="uid://08is53654krc" path="res://mob.tscn" id="6_ebhfd"]
+[ext_resource type="PackedScene" uid="uid://bmethda78p02w" path="res://drop_grow.tscn" id="7_bdkjj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ecl6m"]
 size = Vector2(224, 112)
@@ -67,6 +68,7 @@ mobs = [NodePath("../mob2")]
 [node name="mob2" parent="." instance=ExtResource("6_ebhfd")]
 position = Vector2(224, 96)
 scale = Vector2(0.4, 0.4)
+drop_scene = ExtResource("7_bdkjj")
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
 
