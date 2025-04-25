@@ -359,6 +359,8 @@ effect_manager = NodePath("../EffectManager")
 visibility_layer = 2
 scale = Vector2(3, 3)
 collision_mask = 2
+attackSpeedArg1 = 0.4
+attackSpeedArg2 = 0.8
 
 [node name="WeaponsBow" parent="." instance=ExtResource("5_gfurk")]
 visibility_layer = 2
@@ -377,11 +379,12 @@ position = Vector2(-54, 14)
 healthMax = 200.0
 
 [node name="MobAttackTimer" type="Timer" parent="."]
+wait_time = 5.0
 autostart = true
 
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
-[connection signal="body_entered" from="kill_area" to="." method="_on_kill_area_body_entered"]
 [connection signal="body_entered" from="kill_area" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="kill_area" to="." method="_on_kill_area_body_entered"]
 [connection signal="death" from="HealthManager" to="." method="_on_health_manager_death"]
 [connection signal="timeout" from="MobAttackTimer" to="." method="_on_mob_attack_timer_timeout"]

@@ -60,7 +60,8 @@ func apply_effect(effect : String, case) -> void:
 		reset_size_word()
 		sprite.scale -= Vector2(0.1,0.1)
 		collisionPolygon.scale -= Vector2(0.1,0.1)
-		$"..".ACCELERATION /= Vector2(2.0,2.0)
+		$"..".acceleration_ratio = 0.5
+
 		
 		
 	#for major sprite and coollision size
