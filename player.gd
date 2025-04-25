@@ -11,15 +11,22 @@ var acceleration_ratio = 1.0
 func _physics_process(delta: float) -> void:
 	var input = Input.get_vector("left", "right", "up", "down")
 	if input.length() > 0 and player_chase:
-		$Sprite2D.play("run")
 	#	if input.x != 0: animated_sprite_2d.scale.x = sign(input.x)
-		velocity = velocity.move_toward(input * MAX_SPEED, acceleration_ratio * ACCELERATION * delta)
+		velocity = velocity.move_toward(input * MAX_SPEED * acceleration_ratio, acceleration_ratio * ACCELERATION * delta)
 	
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
-	#	animated_sprite_2d.play("idle")
 	move_and_slide()
-
+	if velocity == Vector2(0.0,0.0):
+		$Sprite2D.play("Idle")
+	elif velocity >= Vector2(0.0,0.0):
+		#$Sprite2D.flip_h
+		$Sprite2D.play("Move")
+		
+	elif velocity <= Vector2(0.0,0.0):
+		$Sprite2D.flip_h = true
+		$Sprite2D.play("Move")
+		
 
 
 func _on_animated_sprite_2d_animation_finished() -> void:

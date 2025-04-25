@@ -5,7 +5,7 @@ var player_chase = false
 var player = null
 var is_stun=false
 signal death(mob: Node)
-
+var acceleration_ratio = 1.0
 func _process(delta: float) -> void:
 	if(Input.is_action_just_pressed("kill_mobs")):
 		emit_signal("death", self)
@@ -13,12 +13,16 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	if player_chase and is_stun==false:
-		global_position += (player.global_position - global_position)/speed
+		global_position += ((player.global_position - global_position)/speed)*acceleration_ratio
 		if (player.global_position.x - global_position.x) < 0:
-			$AnimatedSprite2D.flip_h = true
+			$AnimatedSprite2D.play("Move")
 		move_and_collide(Vector2(0,0))
 		$WeaponsSword.look_at_target(player.global_position)
 		$WeaponsBow.look_at_target(player.global_position)
+		if global_position.x >= 0.0:
+			$AnimatedSprite2D.flip_h = true
+		if global_position.x <= 0.0:
+			$AnimatedSprite2D.flip_h = false
 
 func _on_detection_area_body_entered(body: Node2D) -> void:
 	if(body.name == "Player"):
