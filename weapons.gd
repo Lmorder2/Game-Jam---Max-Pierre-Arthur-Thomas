@@ -1,5 +1,6 @@
 extends Area2D
-
+@export var attackSpeedArg1 : float
+@export var attackSpeedArg2 : float
 @export var hitbox : CollisionPolygon2D
 var attack_duration = 0.2  # Durée d'activation de la hitbox
 
@@ -22,8 +23,10 @@ func _process(delta):
 
 func look_at_target(target: Vector2) -> void:
 	var target_angle = (target - global_position).angle()
-	rotation = lerp_angle(rotation, target_angle, 0.06)  # 0.1 = vitesse de rotation
+	var rotaSpeed = (randf_range(attackSpeedArg1, attackSpeedArg2))
+	rotation = lerp_angle(rotation, target_angle, rotaSpeed)  # 0.1 = vitesse de rotation
 
+#randi_range(from: int, to: int)
 	
 func activate_sword_attack():
 	monitoring = true

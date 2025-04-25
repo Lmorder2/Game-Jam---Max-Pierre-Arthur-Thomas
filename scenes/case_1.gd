@@ -84,6 +84,7 @@ func _drop_data(_pos, data):
 			effect_manager.reset_size_word()
 			$Label.text = "Normal"
 			
+			
 		#reset des armes (épée de base)
 		elif acceptedClass == WORD_CLASSES.WEAPONS:
 			effect_manager.reset_weapon()

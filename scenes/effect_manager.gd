@@ -15,6 +15,8 @@ var originalStateBow
 
 
 func _ready() -> void:
+	$ParticlePoison.emitting = false
+	$ParticleStun.emitting = false
 	originalSpriteSize = Vector2(sprite.scale)
 	originalColSize = Vector2(collisionPolygon.scale)
 	sword.set_process(true)
@@ -58,6 +60,8 @@ func apply_effect(effect : String, case) -> void:
 		reset_size_word()
 		sprite.scale -= Vector2(0.1,0.1)
 		collisionPolygon.scale -= Vector2(0.1,0.1)
+		$"..".acceleration_ratio = 0.5
+
 		
 		
 	#for major sprite and coollision size
@@ -86,12 +90,14 @@ func apply_effect(effect : String, case) -> void:
 		
 	if (effect) == "Poison":
 		reset_effect()
+		$ParticlePoison.emitting = true
 		for i in range(5):
 			$PoisonTimer.wait_time = 5
 			healthManager.amount = 3
 			healthManager.take_damage(healthManager.amount)
 			$PoisonTimer.start()
 			await $PoisonTimer.timeout
+		$ParticlePoison.emitting = false
 		case.reset_case()
 		reset_effect()
 
@@ -99,4 +105,15 @@ func apply_effect(effect : String, case) -> void:
 		
 		
 	if (effect) == "Immobile":
-		print("Immobile Effect")
+		reset_effect()
+		$ParticleStun.emitting = true
+		$StunTimer.wait_time = 6
+		$StunTimer.start()
+		$"..".player_chase = false
+		$"..".is_stun = true
+		await $StunTimer.timeout
+		$"..".player_chase = true
+		$"..".is_stun = false
+		$ParticleStun.emitting = false
+		case.reset_case()
+		reset_effect()
