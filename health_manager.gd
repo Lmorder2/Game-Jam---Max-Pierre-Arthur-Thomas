@@ -18,8 +18,9 @@ func _ready() -> void:
 
 func life_reset():
 	healthMax = originalHealthMax
+	healthActual = healthMax
 	lifeBar.set_max(healthMax)
-	healthActual.set_value(healthMax)
+	lifeBar.set_value(healthActual)
 	
 func life_update():
 	lifeBar.set_value(healthActual)
@@ -39,6 +40,10 @@ func take_damage(amount):
 		amount = 0
 		life_update()
 		death.emit()
+		if $"..".name == "Player":
+			print("le joueur est mort")
+			$"..".global_position = $"..".START_GAME.global_position
+			life_reset()
 		
 	elif healthCalc >= healthMax :
 		healthActual = healthMax

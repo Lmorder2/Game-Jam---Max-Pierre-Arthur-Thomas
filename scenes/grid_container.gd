@@ -21,4 +21,9 @@ func item_picked(item):
 		$Case4.show()
 	elif item == "Shrink":
 		$Case2.show()
-	
+	elif item == "Poison":
+		$Case5é.show()
+	elif item == "Grand":
+		$Case1.show()
+	elif item == "Stun":
+		$Case6.show()
