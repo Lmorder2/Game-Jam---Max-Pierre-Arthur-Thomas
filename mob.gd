@@ -3,7 +3,7 @@ extends CharacterBody2D
 var speed = 40
 var player_chase = false
 var player = null
-
+var is_stun=false
 signal death(mob: Node)
 
 func _process(delta: float) -> void:
@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 		queue_free()
 
 func _physics_process(delta: float) -> void:
-	if player_chase:
+	if player_chase and is_stun==false:
 		global_position += (player.global_position - global_position)/speed
 		if (player.global_position.x - global_position.x) < 0:
 			$AnimatedSprite2D.flip_h = true

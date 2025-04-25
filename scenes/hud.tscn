@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cu2dl4vtewxwg"]
+[gd_scene load_steps=13 format=3 uid="uid://cu2dl4vtewxwg"]
 
 [ext_resource type="Texture2D" uid="uid://caj4xrea1i5cc" path="res://fond.png" id="1_0i1j5"]
 [ext_resource type="PackedScene" uid="uid://b6roqvdffbw0i" path="res://scenes/case_hud.tscn" id="1_5ysmq"]

@@ -3,12 +3,13 @@ extends CharacterBody2D
 const MAX_SPEED = 100.0
 const ACCELERATION = 1000.0
 const FRICTION = 500.0
-
+var is_stun = false
+var player_chase = true
 #@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 #mouvement 
 func _physics_process(delta: float) -> void:
 	var input = Input.get_vector("left", "right", "up", "down")
-	if input.length() > 0:
+	if input.length() > 0 and player_chase:
 	#	animated_sprite_2d.play("run")
 		velocity = velocity.move_toward(input * MAX_SPEED, ACCELERATION * delta)
 	#	if input.x != 0: animated_sprite_2d.scale.x = sign(input.x)

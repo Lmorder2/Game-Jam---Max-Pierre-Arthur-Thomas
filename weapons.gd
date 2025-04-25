@@ -22,8 +22,10 @@ func _process(delta):
 
 func look_at_target(target: Vector2) -> void:
 	var target_angle = (target - global_position).angle()
-	rotation = lerp_angle(rotation, target_angle, 0.06)  # 0.1 = vitesse de rotation
+	var rotaSpeed = (randf_range(0.04, 0.08))
+	rotation = lerp_angle(rotation, target_angle, rotaSpeed)  # 0.1 = vitesse de rotation
 
+#randi_range(from: int, to: int)
 	
 func activate_sword_attack():
 	monitoring = true
