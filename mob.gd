@@ -64,6 +64,7 @@ func drop_loot():
 		get_parent().add_child(drop_instance)
 		drop_instance.global_position = global_position
 
+
 func attack(player):
 	player.get_node("HealthManager").take_damage(5)
 	

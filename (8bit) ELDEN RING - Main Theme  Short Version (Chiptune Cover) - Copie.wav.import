@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://btrqwpdvwjpfd"
+path="res://.godot/imported/(8bit) ELDEN RING - Main Theme  Short Version (Chiptune Cover) - Copie.wav-ce79660166943ddaeb6cfed4f2d15afe.sample"
+
+[deps]
+
+source_file="res://(8bit) ELDEN RING - Main Theme  Short Version (Chiptune Cover) - Copie.wav"
+dest_files=["res://.godot/imported/(8bit) ELDEN RING - Main Theme  Short Version (Chiptune Cover) - Copie.wav-ce79660166943ddaeb6cfed4f2d15afe.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
