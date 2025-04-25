@@ -327,10 +327,10 @@ frame_progress = 0.330133
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(-24, 16)
-scale = Vector2(5.22031, -3.06252)
+position = Vector2(-27.0937, 13.817)
+scale = Vector2(5.28556, -3.18433)
 build_mode = 1
-polygon = PackedVector2Array(2.87339, 0.653057, 6.89614, 0.653057, 6.51302, 9.79584, 2.87339, 9.79584)
+polygon = PackedVector2Array(2.87339, 0.653057, 6.89614, 0.653057, 7.66238, 7.83668, 3.06495, 7.83668)
 one_way_collision_margin = 128.0
 
 [node name="detection_area" type="Area2D" parent="."]
