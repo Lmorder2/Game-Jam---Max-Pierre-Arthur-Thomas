@@ -166,7 +166,7 @@ autoplay = true
 
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
-[connection signal="body_entered" from="kill_area" to="." method="_on_kill_area_body_entered"]
 [connection signal="body_entered" from="kill_area" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="kill_area" to="." method="_on_kill_area_body_entered"]
 [connection signal="death" from="HealthManager" to="." method="_on_health_manager_death"]
 [connection signal="timeout" from="MobAttackTimer" to="." method="_on_mob_attack_timer_timeout"]
