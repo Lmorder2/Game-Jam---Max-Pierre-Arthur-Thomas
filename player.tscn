@@ -64,6 +64,8 @@ offset_left = -13.0
 offset_right = 12.0
 offset_bottom = 4.0
 
+[connection signal="child_entered_tree" from="CollisionPolygon2D" to="." method="_on_collision_polygon_2d_child_entered_tree"]
+
 [editable path="BoxMots"]
 [editable path="BoxMots/HBoxContainer/Case1"]
 [editable path="BoxMots/HBoxContainer/Case2"]

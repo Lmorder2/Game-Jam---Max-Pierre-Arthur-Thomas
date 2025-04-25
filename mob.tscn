@@ -304,14 +304,14 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ubaqv"]
-size = Vector2(605, 520)
+size = Vector2(300, 300)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p11y5"]
 size = Vector2(24, 26)
 
 [node name="mob" type="CharacterBody2D"]
 position = Vector2(67, 98)
-collision_layer = 2
+collision_layer = 4
 slide_on_ceiling = false
 floor_stop_on_slope = false
 safe_margin = 0.8
@@ -327,7 +327,10 @@ frame_progress = 0.330133
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(3, -1.25)
+position = Vector2(-24, 16)
+scale = Vector2(5.22031, -3.06252)
+build_mode = 1
+polygon = PackedVector2Array(2.87339, 0.653057, 6.89614, 0.653057, 6.51302, 9.79584, 2.87339, 9.79584)
 one_way_collision_margin = 128.0
 
 [node name="detection_area" type="Area2D" parent="."]
@@ -335,27 +338,32 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detection_area"]
-position = Vector2(1, 5)
+position = Vector2(-17, 5)
 shape = SubResource("RectangleShape2D_ubaqv")
 
 [node name="kill_area" type="Area2D" parent="."]
-visible = false
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="kill_area"]
-visible = false
 scale = Vector2(1e-05, 1e-05)
 shape = SubResource("RectangleShape2D_p11y5")
 
-[node name="BoxMots" parent="." instance=ExtResource("3_1qmh0")]
+[node name="BoxMots" parent="." node_paths=PackedStringArray("effect_manager") instance=ExtResource("3_1qmh0")]
 offset_left = -50.0
 offset_top = -37.0
 offset_right = 50.0
 offset_bottom = -17.0
+effect_manager = NodePath("../EffectManager")
 
 [node name="WeaponsSword" parent="." instance=ExtResource("3_ubaqv")]
+visibility_layer = 2
+scale = Vector2(3, 3)
+collision_mask = 2
 
 [node name="WeaponsBow" parent="." instance=ExtResource("5_gfurk")]
+visibility_layer = 2
+scale = Vector2(3, 3)
+collision_mask = 2
 
 [node name="EffectManager" parent="." node_paths=PackedStringArray("sprite", "collisionPolygon", "sword", "bow", "healthManager") instance=ExtResource("6_ieysi")]
 sprite = NodePath("../AnimatedSprite2D")
@@ -368,7 +376,12 @@ healthManager = NodePath("../HealthManager")
 position = Vector2(-54, 14)
 healthMax = 200.0
 
+[node name="MobAttackTimer" type="Timer" parent="."]
+autostart = true
+
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
-[connection signal="body_entered" from="kill_area" to="." method="_on_kill_area_body_entered"]
 [connection signal="body_entered" from="kill_area" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="kill_area" to="." method="_on_kill_area_body_entered"]
+[connection signal="death" from="HealthManager" to="." method="_on_health_manager_death"]
+[connection signal="timeout" from="MobAttackTimer" to="." method="_on_mob_attack_timer_timeout"]
