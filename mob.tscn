@@ -103,7 +103,7 @@ position = Vector2(-3, -26)
 scale = Vector2(2.345, 2.345)
 sprite_frames = SubResource("SpriteFrames_nokgg")
 animation = &"Move"
-frame_progress = 0.810739
+frame_progress = 0.173377
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-27.0937, 13.817)
@@ -155,7 +155,7 @@ healthManager = NodePath("../HealthManager")
 
 [node name="HealthManager" parent="." instance=ExtResource("7_cixyi")]
 position = Vector2(-54, 14)
-healthMax = 200.0
+healthMax = 100000.0
 
 [node name="MobAttackTimer" type="Timer" parent="."]
 wait_time = 5.0

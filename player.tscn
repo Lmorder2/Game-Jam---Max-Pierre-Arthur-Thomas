@@ -106,9 +106,11 @@ effect_manager = NodePath("../EffectManager")
 alignment = 1
 
 [node name="weaponsBow" parent="." instance=ExtResource("4_sweqy")]
+position = Vector2(2, -6)
 is_player = true
 
 [node name="weaponsSword" parent="." instance=ExtResource("5_2hs0m")]
+position = Vector2(2, -6)
 is_player = true
 
 [node name="EffectManager" parent="." node_paths=PackedStringArray("sprite", "collisionPolygon", "sword", "bow", "healthManager") instance=ExtResource("7_1jxqw")]

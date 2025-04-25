@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+var damage_amount = 10
 const MAX_SPEED = 100.0
 const ACCELERATION = 1000.0
 const FRICTION = 500.0
@@ -33,4 +33,4 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	pass # Replace with function body.
 
 func attack(body):
-	body.get_node("HealthManager").take_damage(20)
+	body.get_node("HealthManager").take_damage(damage_amount)
