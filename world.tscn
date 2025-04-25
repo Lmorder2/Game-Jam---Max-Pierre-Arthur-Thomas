@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dl7qm3ml6v6q3" path="res://word_bow.png" id="5_udxuc"]
 [ext_resource type="PackedScene" uid="uid://br0nltp5jg1an" path="res://room_left.tscn" id="5_wse8f"]
 [ext_resource type="PackedScene" uid="uid://414k1i406gnv" path="res://chest.tscn" id="6_2u3nc"]
-[ext_resource type="PackedScene" uid="uid://gkae27xrcy3k" path="res://scenes/dialog_box.tscn" id="6_dwbse"]
+[ext_resource type="PackedScene" path="res://scenes/dialog_box.tscn" id="6_dwbse"]
 [ext_resource type="Texture2D" uid="uid://b4iqgqprkh55p" path="res://word_sword.png" id="6_ikiii"]
 [ext_resource type="PackedScene" uid="uid://b8wye6esescu0" path="res://room_bottom_right_left.tscn" id="6_wse8f"]
 [ext_resource type="PackedScene" uid="uid://bueuvbtg4e5fw" path="res://room_bottom_right.tscn" id="7_ic0uy"]
@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bvn1f5odxxjk7" path="res://room_top_left.tscn" id="9_2o6r5"]
 [ext_resource type="PackedScene" uid="uid://brjokpyapc4ly" path="res://room_bottom.tscn" id="11_2u3nc"]
 [ext_resource type="Texture2D" uid="uid://yrtianmkcj6j" path="res://word_shrink.png" id="12_cbp6q"]
-[ext_resource type="PackedScene" uid="uid://j0plhwgm7r82" path="res://room_all.tscn" id="15_2u3nc"]
+[ext_resource type="PackedScene" uid="uid://d1yy4d83uqw5v" path="res://room_all.tscn" id="15_2u3nc"]
 [ext_resource type="PackedScene" uid="uid://comh65adnc5k1" path="res://room_top_left_v2.tscn" id="15_hiqwa"]
 [ext_resource type="AudioStream" uid="uid://cifnrbkx0s8hh" path="res://(8bit) ELDEN RING - Main Theme  Short Version (Chiptune Cover).wav" id="15_udxuc"]
 
@@ -94,6 +94,9 @@ position = Vector2(320, -180)
 stream = ExtResource("15_udxuc")
 volume_db = 1.631
 autoplay = true
+
+[node name="START_GAME" type="Node2D" parent="."]
+position = Vector2(104, 272)
 
 [editable path="Chest2"]
 [editable path="room_bottom_right/Chest3"]
