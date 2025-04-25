@@ -7,11 +7,14 @@ class_name EffectManager
 @export var sword : Node2D
 @export var bow : Node2D
 @export var healthManager : Node2D
-
 var originalSpriteSize
 var originalColSize
 var originalStateSword
 var originalStateBow
+var originalScalSword
+var originalScalBow
+var originalDamageAmount
+var scaleEffect = Vector2(0.4,0.4)
 
 
 func _ready() -> void:
@@ -19,6 +22,9 @@ func _ready() -> void:
 	$ParticleStun.emitting = false
 	originalSpriteSize = Vector2(sprite.scale)
 	originalColSize = Vector2(collisionPolygon.scale)
+	originalScalSword = Vector2(sword.scale)
+	originalScalBow = Vector2(bow.scale)
+	originalDamageAmount = $"..".damage_amount
 	sword.set_process(true)
 	sword.show()
 	print("état de sword set process"+str(sword.is_processing()))
@@ -37,6 +43,10 @@ func _process(delta: float) -> void:
 func reset_size_word():
 	sprite.scale = originalSpriteSize
 	collisionPolygon.scale = originalColSize
+	sword.scale = originalScalSword
+	bow.scale = originalScalBow
+	$"..".acceleration_ratio = 1.0
+	$"..".damage_amount += originalDamageAmount
 	
 func reset_weapon():
 	bow.set_process(false)
@@ -58,9 +68,12 @@ func apply_effect(effect : String, case) -> void:
 	if (effect) == "Petit":
 		#- size sprite and col
 		reset_size_word()
-		sprite.scale -= Vector2(0.1,0.1)
-		collisionPolygon.scale -= Vector2(0.1,0.1)
-		$"..".acceleration_ratio = 0.5
+		sprite.scale -= scaleEffect
+		collisionPolygon.scale -= scaleEffect
+		bow.scale -= scaleEffect
+		sword.scale -= scaleEffect
+		$"..".acceleration_ratio = 1.5
+		$"..".damage_amount -= 5
 
 		
 		
@@ -68,8 +81,12 @@ func apply_effect(effect : String, case) -> void:
 	if (effect) == "Grand":
 		#+ size sprite and collision
 		reset_size_word()
-		sprite.scale += Vector2(0.1,0.1)
-		collisionPolygon.scale += Vector2(0.1,0.1)
+		sprite.scale += scaleEffect
+		collisionPolygon.scale += scaleEffect
+		bow.scale += scaleEffect
+		sword.scale += scaleEffect
+		$"..".acceleration_ratio = 0.5
+		$"..".damage_amount += 5
 	#
 		#Switch épée / arc
 	if (effect) == "Epée":

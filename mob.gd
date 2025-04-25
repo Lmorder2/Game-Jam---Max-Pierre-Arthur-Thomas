@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+var damage_amount = 5
 var speed = 40
 var player_chase = false
 var player = null
@@ -64,5 +65,9 @@ func drop_loot():
 		drop_instance.global_position = global_position
 
 func attack(player):
+<<<<<<< HEAD
 	player.get_node("HealthManager").take_damage(5)
 	
+=======
+	player.get_node("HealthManager").take_damage(damage_amount)
+>>>>>>> 0973cdabe5522bd507e790162e4920460088bf11
