@@ -82,13 +82,11 @@ collision_layer = 2
 script = ExtResource("1_1umnt")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
-self_modulate = Color(1, 1, 1, 0.505882)
 show_behind_parent = true
 position = Vector2(0, -13)
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_1jxqw")
 animation = &"Idle"
-frame_progress = 0.379173
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(0, -13)
