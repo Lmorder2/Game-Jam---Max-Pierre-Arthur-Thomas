@@ -19,7 +19,7 @@ func _on_body_entered(body):
 		$Item/DropChest.show()
 
 func _on_grow_body_entered(body: Node2D) -> void:
-	$Item/DropChest.visible = false
-	$Item/dropchest_collision.visible = false
-	Events.item_picked.emit(item_name)
-	print("le joueur reup l'item   " + str(item_name))
+	if is_open == true:
+		$Item.queue_free()
+		Events.item_picked.emit(item_name)
+		print("le joueur reup l'item   " + str(item_name))

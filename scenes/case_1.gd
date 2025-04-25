@@ -19,7 +19,7 @@ enum WORD_CLASSES
 func _ready():
 	if(canDrop):
 		effect_manager = $"../..".effect_manager
-
+	Events.room_cleared.connect(reset_case)
 func _get_drag_data(position):
 
 	# Get the text from the Label node in the scene
@@ -68,6 +68,10 @@ func reset_case():
 	_drop_data(Vector2.ZERO, obj)
 	
 func _drop_data(_pos, data):
+	
+	if !canDrop:
+		return
+		
 	if data["text"] != "Reset":
 		$Label.text=data["text"]
 		print(data["text"])

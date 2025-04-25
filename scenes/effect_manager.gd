@@ -82,7 +82,7 @@ func apply_effect(effect : String, case) -> void:
 		#+ size sprite and collision
 		reset_size_word()
 		sprite.scale += scaleEffect
-		collisionPolygon.scale += scaleEffect
+		#collisionPolygon.scale += scaleEffect
 		bow.scale += scaleEffect
 		sword.scale += scaleEffect
 		$"..".acceleration_ratio = 0.5

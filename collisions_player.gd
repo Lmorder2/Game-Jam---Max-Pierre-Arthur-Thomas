@@ -18,6 +18,7 @@ func lock_rooms(emitter):
 					grandchild.set_deferred("disabled", false)
 
 func unlock_rooms():
+	Events.room_cleared.emit()
 	for child in get_children():
 		for grandchild in child.get_children():
 			if grandchild is CollisionShape2D:
