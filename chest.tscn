@@ -36,7 +36,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_bv3sb")
 }],
 "loop": false,
-"name": &"default",
+"name": &"open_chest",
 "speed": 5.0
 }]
 
@@ -55,6 +55,7 @@ script = ExtResource("1_bp1or")
 position = Vector2(-4.76837e-07, 5.96046e-07)
 scale = Vector2(2.2, 2.2)
 sprite_frames = SubResource("SpriteFrames_day8l")
+animation = &"open_chest"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_udxuc")
