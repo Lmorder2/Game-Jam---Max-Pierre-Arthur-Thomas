@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bkx2epnt5ymb7" path="res://dungeon_rooms/basic_dungeon_room.png" id="2_qius0"]
 [ext_resource type="Texture2D" uid="uid://in2k08jsy2n4" path="res://dungeon_rooms/bottom_right.png" id="2_wfbb5"]
 [ext_resource type="PackedScene" uid="uid://cqfaktsu0eir" path="res://door.tscn" id="3_xiv2w"]
-[ext_resource type="PackedScene" uid="uid://vquj42g8pf15" path="res://collisions_player.tscn" id="5_o7y3s"]
+[ext_resource type="PackedScene" uid="uid://dki53yd54j7ug" path="res://collisions_player.tscn" id="5_o7y3s"]
 [ext_resource type="PackedScene" uid="uid://08is53654krc" path="res://mob.tscn" id="6_03n18"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ecl6m"]

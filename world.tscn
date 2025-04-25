@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bvn1f5odxxjk7" path="res://room_top_left.tscn" id="9_2o6r5"]
 [ext_resource type="PackedScene" uid="uid://brjokpyapc4ly" path="res://room_bottom.tscn" id="11_2u3nc"]
 [ext_resource type="Texture2D" uid="uid://yrtianmkcj6j" path="res://word_shrink.png" id="12_cbp6q"]
-[ext_resource type="PackedScene" uid="uid://d1yy4d83uqw5v" path="res://room_all.tscn" id="15_2u3nc"]
+[ext_resource type="PackedScene" uid="uid://j0plhwgm7r82" path="res://room_all.tscn" id="15_2u3nc"]
 [ext_resource type="PackedScene" uid="uid://comh65adnc5k1" path="res://room_top_left_v2.tscn" id="15_hiqwa"]
 [ext_resource type="AudioStream" uid="uid://cifnrbkx0s8hh" path="res://(8bit) ELDEN RING - Main Theme  Short Version (Chiptune Cover).wav" id="15_udxuc"]
 
