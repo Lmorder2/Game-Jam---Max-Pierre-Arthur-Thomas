@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cu2dl4vtewxwg"]
+[gd_scene load_steps=13 format=3 uid="uid://cu2dl4vtewxwg"]
 
 [ext_resource type="Texture2D" uid="uid://caj4xrea1i5cc" path="res://fond.png" id="1_0i1j5"]
 [ext_resource type="PackedScene" uid="uid://b6roqvdffbw0i" path="res://scenes/case_hud.tscn" id="1_5ysmq"]
@@ -17,9 +17,9 @@
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 offset_left = 301.0
-offset_top = -219.0
+offset_top = -28.0
 offset_right = 534.0
-offset_bottom = 504.0
+offset_bottom = 199.0
 texture = ExtResource("1_mphia")
 
 [node name="TextureRect" type="TextureRect" parent="."]
